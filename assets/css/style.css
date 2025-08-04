@@ -1,0 +1,122 @@
+input[data-readonly] {
+	pointer-events: none;
+	background-color: #e9ecef; 
+}
+
+.gap {
+	height: 2em;
+}
+	.gap-sm {
+		height: 0.5em;
+	}
+
+.gui_faded_25 {
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+
+	/* IE 5-7 */
+	filter: alpha(opacity=25);
+
+	/* Netscape */
+	-moz-opacity: 0.25;
+
+	/* Safari 1.x */
+	-khtml-opacity: 0.25;
+
+	/* Good browsers */
+	opacity: 0.25;
+
+}
+
+.gui_faded_50 {
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+	/* IE 5-7 */
+	filter: alpha(opacity=50);
+
+	/* Netscape */
+	-moz-opacity: 0.5;
+
+	/* Safari 1.x */
+	-khtml-opacity: 0.5;
+
+	/* Good browsers */
+	opacity: 0.5;
+
+}
+
+hr.section {
+	position: relative;
+	top: 20px;
+	border: none;
+	height: 1px;
+	background: #bebebe;
+	margin-bottom: 20px;
+}
+
+div.devBar {
+	font-size: .8em;
+	background: #de1f1f;
+	color: white;
+}
+
+div.liveBar {
+	font-size: .8em;
+	background: #1F85DE;
+	color: white;
+}
+
+.has-clear {
+	position: relative;
+}
+
+::-ms-clear {
+	display: none;
+}
+
+.form-control-clear {
+	z-index: 10;
+	pointer-events: auto;
+	cursor: pointer;
+	right: 12px;
+	bottom: 12px;
+	position: absolute;
+}
+/* Report Status CSS */
+.status-draft {
+	color: orange
+}
+.status-live {
+	color: green
+}
+.status-unavailable {
+	color: red
+}
+
+/* powerBI */
+.powerbi-reportContainer {
+	width: 100%;
+	height: calc((100vw - 60px) * 0.4);
+	background-color: white;
+	padding: 0px;
+	clear: both;
+}
+.powerbi-reportContainer iframe {
+	border: none;
+}
+
+@keyframes shadow-pulse
+{
+	 0% {
+		  box-shadow: 0 0 0 0px #1fc0de;
+	 }
+	 100% {
+		  box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+	 }
+}
+
+.pulse
+{
+	 animation: shadow-pulse 1s infinite;
+}
