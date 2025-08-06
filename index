@@ -4,13 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
         <title>orca v1.1.3.3</title>
-        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/fontawesome/6.0.0/css/all.css">
+        <link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/fontawesome/6.0.0/css/all.css">
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="/assets/css/style.loadspinner.css">
         <link rel="stylesheet" href="/assets/css/style.bootstrap.overrides.css">
-        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.css">
-        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.css">
+        <link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.css">
+        <link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.css">
     </head>
     <body id="page-top">
         <div class="liveBar">live site</div>
@@ -25,32 +25,32 @@
                             <a class="navbar-left">
                                 <img src="/assets/img/logo.landscape.png" style="height: 2em; margin-right: .4em;" class="hiddenX"/>
                             </a>
-                            <a class="navbar-brand" href="https://orca.syfire.gov.uk/">orca &nbsp;v1.1.3.3</a>
+                            <a class="navbar-brand" href="https://nextplay-stats.github.io/NPSPilotv3/">orca &nbsp;v1.1.3.3</a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="mainNav">
                                 <ul class="navbar-nav me-auto">
                                     <li class="nav-item ">
-                                        <a class="nav-link " href="https://orca.syfire.gov.uk/">
+                                        <a class="nav-link " href="https://nextplay-stats.github.io/NPSPilotv3/">
                                             <i class="fas fa-home"></i>
                                             &nbsp;Home
                                         </a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/reports" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/reports" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-list"></i>
                                             &nbsp;Reports
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/index">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/reports/index">
                                                     <i class="fas fa-chart-line"></i>
                                                     &nbsp;View
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/manageReports">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/reports/manageReports">
                                                     <i class="fas fa-list-alt"></i>
                                                     &nbsp;Manage
                                                 </a>
@@ -58,19 +58,19 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/commentary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/commentary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-file-alt"></i>
                                             &nbsp;Commentary
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/list">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/commentary/list">
                                                     <i class="fas fa-list-alt"></i>
                                                     &nbsp;View
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/scheduleList">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/commentary/scheduleList">
                                                     <i class="fas fa-clock"></i>
                                                     &nbsp;Schedules
                                                 </a>
@@ -78,19 +78,19 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/users" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/users" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-users"></i>
                                             &nbsp;Users
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/users/external">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/users/external">
                                                     <i class="fas fa-arrow-alt-circle-left"></i>
                                                     &nbsp;External Users
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/users/internal">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/users/internal">
                                                     <i class="fas fa-arrow-alt-circle-right"></i>
                                                     &nbsp;Internal Users
                                                 </a>
@@ -98,19 +98,19 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/admin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/admin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-gear"></i>
                                             &nbsp;Admin
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/listGroups">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/admin/listGroups">
                                                     <i class="fas fa-list-check"></i>
                                                     &nbsp;Groups
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/newsFeed">
+                                                <a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/admin/newsFeed">
                                                     <i class="fas fa-newspaper"></i>
                                                     &nbsp;News Feed
                                                 </a>
@@ -120,13 +120,13 @@
                                 </ul>
                                 <ul class="navbar-nav navbar-right">
                                     <li class="nav-item">
-                                        <a target="_blank" class="nav-link" href="https://orca.syfire.gov.uk/">
+                                        <a target="_blank" class="nav-link" href="https://nextplay-stats.github.io/NPSPilotv3/">
                                             <i class="fas fa-window-restore"></i>
                                             &nbsp;New Window
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="https://orca.syfire.gov.uk/home/help">
+                                        <a class="nav-link" href="https://nextplay-stats.github.io/NPSPilotv3/home/help">
                                             <i class="fas fa-question-circle"></i>
                                             &nbsp;Help
                                         </a>
@@ -137,15 +137,15 @@
                                             &nbsp;Zane Burgess
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown01">
-                                            <a class="dropdown-item" href="https://orca.syfire.gov.uk/user">
+                                            <a class="dropdown-item" href="https://nextplay-stats.github.io/NPSPilotv3/user">
                                                 <i class="fas fa-user"></i>
                                                 &nbsp;My User Profile
                                             </a>
-                                            <a class="dropdown-item" href="https://orca.syfire.gov.uk/user/preferences">
+                                            <a class="dropdown-item" href="https://nextplay-stats.github.io/NPSPilotv3/user/preferences">
                                                 <i class="fas fa-cogs"></i>
                                                 &nbsp;My Preferences
                                             </a>
-                                            <form id="form_signin" method="post" action="https://orca.syfire.gov.uk/user/logout" class="form-inline">
+                                            <form id="form_signin" method="post" action="https://nextplay-stats.github.io/NPSPilotv3/user/logout" class="form-inline">
                                                 <input name="session" value="logout" type="hidden">
                                                 <a class="dropdown-item" href="#" onClick="$('#form_signin').submit();">
                                                     <i class="fas fa-sign-out-alt"></i>
@@ -158,23 +158,23 @@
                             </div>
                         </div>
                     </nav>
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery/jquery-3.4.1/jquery-3.4.1.min.js"></script>
-                    <!-- <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-ui/jquery-ui-1.12.1/jquery-ui.js"></script> -->
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/popper/2.11.7/popper.min.js"></script>
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-easing/jquery.easing.min.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+                    <!-- <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery-ui/jquery-ui-1.12.1/jquery-ui.js"></script> -->
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/popper/2.11.7/popper.min.js"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery-easing/jquery.easing.min.js?version=1.1.3.3"></script>
                     <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.js"></script>
                     <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
                     <script type="text/javascript" src="/assets/js/scripts.js?version=1.1.3.3"></script>
                     <script type="text/javascript" src="/assets/js/ajax.js?version=1.1.3.3"></script>
                     <script type="text/javascript" src="/assets/js/modalforms.js?version=1.1.3.3"></script>
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/powerBI/2.14.1/powerbi.min.js"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/powerBI/2.14.1/powerbi.min.js"></script>
                     <script type="text/javascript" src="/assets/js/scripts.powerbi.js?version=1.1.3.3"></script>
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootbox/6.0.0/bootbox.min.js"></script>
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap5-tags-master/1.4.41/tags.js"></script>
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/moment/2.29.4/moment.min.js"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootbox/6.0.0/bootbox.min.js"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap5-tags-master/1.4.41/tags.js"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/moment/2.29.4/moment.min.js"></script>
                     <!-- TinyMCE -->
-                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/tinymce/5.8.2/tinymce.min.js"></script>
+                    <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/tinymce/5.8.2/tinymce.min.js"></script>
                     <script type="text/javascript">
                         sessionUser = 'C230186';
                         lastActivity = '20250806 10:05';
@@ -187,11 +187,11 @@
                             </div>
                             <div class="card-body">
                                 <p class="text-success">
-                                    <strong>Welcome to ORCA South Yorkshire Fire and Rescue's portal to business intelligence reports.</strong>
+                                    <strong>Welcome to NPS's portal.</strong>
                                 </p>
                                 <hr>
                                 <p>
-                                    We've added a user guide to help you navigate ORCA and PowerBI reports.  Click <a href="https://syfirecorp01.syfire.gov.uk/document/4507" target="_blank">here</a>
+                                    We've added a user guide to help you navigate NPS and PowerBI reports.  Click <a href=" I'm a guide" target="_blank">here</a>
                                     to download the guide.
                                 </p>
                                 <div class="row text-center">
@@ -207,9 +207,9 @@
                                     </div>
                                     <div class="col mx-1 py-2 border border-success rounded">
                                         <h5>How to Request a Report Change</h5>
-                                        <p>If you require further support in using this site, or require a report that you cannot find on Orca, please send an email to our Business Intelligence Mailbox.</p>
+                                        <p>If you require further support in using this site, or require a report that you cannot find on NPS, please send an email to our nextplaystats@outlook.com.</p>
                                         <h6>
-                                            <a href="mailto:datarequests@syfire.gov.uk">Click here to send an email to Business Intelligence</a>
+                                            <a href="mailto:nextplaystats@outlook.com">Click here to send an email to Next Play Stats</a>
                                         </h6>
                                     </div>
                                     <div class="col ms-1">
@@ -243,7 +243,7 @@ The first training session will be announced shortly via the bulletin.</p>					<
 		</div>
 		<div class="row ">
 			<div class="col ">
-				<h5>Full List of Reports Currently on Orca (and where to locate them in the Top Menu)</h5>
+				<h5>Full List of Reports Currently on NPS (and where to locate them in the Top Menu)</h5>
 				<p>Please Note: The rows in the table below are not links. This table is for reference purposes only, please use the top menu to open the reports listed.</p>
 				<table class="table table-sm table-bordered table-hover ">
 					<thead>
@@ -256,7 +256,7 @@ The first training session will be announced shortly via the bulletin.</p>					<
 						</tr>
 					</thead>
 					<tbody>
-					<tr><td><i class="fas fa-home "></i></td><td>Home Fire Safety Visit Report</td><td>For stations to monitor & assess activity regarding Home Fire Safety Visits</td><td>Prevention</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-chart-bar "></i></td><td>Station Level Reports</td><td>For stations to monitor LPIs (Local Performance Indicators) against Station Plans</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-exclamation-triangle "></i></td><td>High Risk Co-ordinator Report</td><td>For High Risk Coordinators to monitor & assess High Risk Home Safety Checks</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-map "></i></td><td>Gazetteer</td><td>A report giving users access to 2 different Gazetteers, for property searches</td><td>Corporate</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-search "></i></td><td>SSRI Overview Report (Crews)</td><td>For crews to monitor & assess activity regarding Site Specific Risk Information</td><td>Protection </td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-chart-line "></i></td><td>Quarterly Performance</td><td>Performance Stats for current Quarter (default) and past quarters</td><td>Protection ,Prevention,People ,Response,Corporate</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-burn "></i></td><td>Bonfire Stats</td><td>A report which specifically shows and analyses Bonfire Night calls each year</td><td>Prevention</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-radiation "></i></td><td>Ops Intel Management</td><td>Detailed information relating to Site Specific Risk Information (SSRI)</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fire-extinguisher "></i></td><td>Incidents Attended</td><td>A focused summary of LPI 2.4(iii) - Number of Incidents Attended by Quarter</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-stopwatch "></i></td><td>Response Standards Report</td><td>Service Response Standards for either a selected quarter, or historic time period</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-chart-area "></i></td><td>LPI Report</td><td>Summary of LPI (Local Performance Indicator) data by Quarter</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-shipping-fast "></i></td><td>Response Standards Briefing</td><td>A summarised report showing Service Response Standards</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-calendar-day "></i></td><td>Daily Incident Summary</td><td>Summary of the incidents attended by SYFR in the last 24hrs</td><td>Protection ,Prevention,People ,Response,Corporate</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-person-booth "></i></td><td>Risk Based Audit Programme (RBAP)</td><td>Pre-organised randomised lists of premises to support the RBAP</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-user-injured "></i></td><td>FDSI</td><td>Information intended to support with completion of Fire Death & Serious Injury Reviews</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-briefcase-medical "></i></td><td>Sickness & Absence </td><td>A report containing summarised data about sickness and absence across the service</td><td>People </td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-business-time "></i></td><td>BFS Performance</td><td>Data to support with performance management of Business Fire Safety activity</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-cloud-sun-rain "></i></td><td>Weather Records</td><td>Daily weather records, as supplied by the Weston Park Weather Centre, Sheffield</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-wrench "></i></td><td>Equipment Use</td><td>Summary of equipment use at South Yorkshire incidents</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-tachometer "></i></td><td>On-Call Availability</td><td>Data relating to on-call availability, as recorded on RMS, up to last day of previous month</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-percent "></i></td><td>IRS Outstanding Incidents & 10 Percent Checks</td><td>To support in completion and accuracy of IRS recording across the service</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-phone "></i></td><td>Control Call Handling</td><td>Average call handling times, as recorded by Control (using Systel)</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-boxes "></i></td><td>RBAP - Draft</td><td>Pre-organised randomised lists of premises to support the RBAP</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-user-clock "></i></td><td>HRC Management Reports</td><td>For Senior Management only</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-bullhorn "></i></td><td>AFA Calls</td><td>Details of AFA Calls, and &#39;Caller hung up&#39; calls received, for Business Fire Safety</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-dumbbell "></i></td><td>Operational Exercises</td><td>Report showing completed exercises, as recorded on Mako and IRS (historical only)</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-fa-solid fa-universal-access "></i></td><td>DRAFT People LPIs - Workforce Diversity</td><td>In Development - report to support with meeting Organisational Diversity objectives</td><td>People </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fire "></i></td><td>ADF Analysis</td><td>To support in Partnership work around preventing Accidental Dwelling Fires (ADFs)</td><td>Prevention</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-fa-solid fa-dumpster-fire "></i></td><td>Deliberate Fires Analysis</td><td>Report to support with Community Partnership working in Districts, around Deliberate and ASB Fires</td><td>Protection ,Prevention</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-fa-solid fa-weight-hanging "></i></td><td>HRP Mobilisations & Attendances</td><td>Report to support with analysis as part of the Specialisms Programme</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-road "></i></td><td>Mobilisations, Attendances & Standbys (Systel)</td><td>Summary of Mobilisations, Attendances & Standbys as recorded on Systel</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-tags "></i></td><td>Feature Tags & Sensitive Codes</td><td>Data relating to usage of specific feature tags and sensitive codes in Narratives</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-route "></i></td><td>DRAFT - CFRMIS & Experian Project</td><td>A DRAFT report to support the ongoing work to develop and update the premise data held in CFRMIS</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-truck-moving "></i></td><td>AVLS</td><td></td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-scale-unbalanced "></i></td><td>DRAFT Gender Pay Gap</td><td>This is a draft of an analysis of our Gender Pay Gap progress as a Service.</td><td>People </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-water "></i></td><td>Water Related Incidents</td><td></td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-house-chimney "></i></td><td>DRAFT New HFSV Report</td><td>DRAFT of a new version of the Home Fire Safety Visits Report</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-bandage "></i></td><td>[DRAFT] CS Admin - S&W Referrals</td><td></td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-business-time "></i></td><td>DRAFT New BFS Performance</td><td>DRAFT of a new version of the BFS Performance Report</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-circle-info "></i></td><td>Incident Viewer</td><td>A single-page view of the key details for a single IRS record</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-dumbbell "></i></td><td>DRAFT Operational Exercises v.3</td><td>A draft version of the existing Exercises Report, with targets and a refreshed theme.</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr>					</tbody>
+					<tr><td><i class="fas fa-home "></i></td><td>Kaylas First Report</td><td>An explanation for what this report is for</td><td>Type 1</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-chart-bar "></i></td><td>Station Level Reports</td><td>For stations to monitor LPIs (Local Performance Indicators) against Station Plans</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-exclamation-triangle "></i></td><td>High Risk Co-ordinator Report</td><td>For High Risk Coordinators to monitor & assess High Risk Home Safety Checks</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-map "></i></td><td>Gazetteer</td><td>A report giving users access to 2 different Gazetteers, for property searches</td><td>Corporate</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-search "></i></td><td>SSRI Overview Report (Crews)</td><td>For crews to monitor & assess activity regarding Site Specific Risk Information</td><td>Protection </td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-chart-line "></i></td><td>Quarterly Performance</td><td>Performance Stats for current Quarter (default) and past quarters</td><td>Protection ,Prevention,People ,Response,Corporate</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-burn "></i></td><td>Bonfire Stats</td><td>A report which specifically shows and analyses Bonfire Night calls each year</td><td>Prevention</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-radiation "></i></td><td>Ops Intel Management</td><td>Detailed information relating to Site Specific Risk Information (SSRI)</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fire-extinguisher "></i></td><td>Incidents Attended</td><td>A focused summary of LPI 2.4(iii) - Number of Incidents Attended by Quarter</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-stopwatch "></i></td><td>Response Standards Report</td><td>Service Response Standards for either a selected quarter, or historic time period</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-chart-area "></i></td><td>LPI Report</td><td>Summary of LPI (Local Performance Indicator) data by Quarter</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-shipping-fast "></i></td><td>Response Standards Briefing</td><td>A summarised report showing Service Response Standards</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-calendar-day "></i></td><td>Daily Incident Summary</td><td>Summary of the incidents attended by SYFR in the last 24hrs</td><td>Protection ,Prevention,People ,Response,Corporate</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-person-booth "></i></td><td>Risk Based Audit Programme (RBAP)</td><td>Pre-organised randomised lists of premises to support the RBAP</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-user-injured "></i></td><td>FDSI</td><td>Information intended to support with completion of Fire Death & Serious Injury Reviews</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-briefcase-medical "></i></td><td>Sickness & Absence </td><td>A report containing summarised data about sickness and absence across the service</td><td>People </td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-business-time "></i></td><td>BFS Performance</td><td>Data to support with performance management of Business Fire Safety activity</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-cloud-sun-rain "></i></td><td>Weather Records</td><td>Daily weather records, as supplied by the Weston Park Weather Centre, Sheffield</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-wrench "></i></td><td>Equipment Use</td><td>Summary of equipment use at South Yorkshire incidents</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-tachometer "></i></td><td>On-Call Availability</td><td>Data relating to on-call availability, as recorded on RMS, up to last day of previous month</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-percent "></i></td><td>IRS Outstanding Incidents & 10 Percent Checks</td><td>To support in completion and accuracy of IRS recording across the service</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-phone "></i></td><td>Control Call Handling</td><td>Average call handling times, as recorded by Control (using Systel)</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-boxes "></i></td><td>RBAP - Draft</td><td>Pre-organised randomised lists of premises to support the RBAP</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-user-clock "></i></td><td>HRC Management Reports</td><td>For Senior Management only</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-bullhorn "></i></td><td>AFA Calls</td><td>Details of AFA Calls, and &#39;Caller hung up&#39; calls received, for Business Fire Safety</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-dumbbell "></i></td><td>Operational Exercises</td><td>Report showing completed exercises, as recorded on Mako and IRS (historical only)</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-fa-solid fa-universal-access "></i></td><td>DRAFT People LPIs - Workforce Diversity</td><td>In Development - report to support with meeting Organisational Diversity objectives</td><td>People </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fire "></i></td><td>ADF Analysis</td><td>To support in Partnership work around preventing Accidental Dwelling Fires (ADFs)</td><td>Prevention</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-fa-solid fa-dumpster-fire "></i></td><td>Deliberate Fires Analysis</td><td>Report to support with Community Partnership working in Districts, around Deliberate and ASB Fires</td><td>Protection ,Prevention</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-fa-solid fa-weight-hanging "></i></td><td>HRP Mobilisations & Attendances</td><td>Report to support with analysis as part of the Specialisms Programme</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-road "></i></td><td>Mobilisations, Attendances & Standbys (Systel)</td><td>Summary of Mobilisations, Attendances & Standbys as recorded on Systel</td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-tags "></i></td><td>Feature Tags & Sensitive Codes</td><td>Data relating to usage of specific feature tags and sensitive codes in Narratives</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-route "></i></td><td>DRAFT - CFRMIS & Experian Project</td><td>A DRAFT report to support the ongoing work to develop and update the premise data held in CFRMIS</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-truck-moving "></i></td><td>AVLS</td><td></td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-scale-unbalanced "></i></td><td>DRAFT Gender Pay Gap</td><td>This is a draft of an analysis of our Gender Pay Gap progress as a Service.</td><td>People </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-water "></i></td><td>Water Related Incidents</td><td></td><td>Response</td><td><i class="fas fa-lock-open text-success "></i> Open</td></tr><tr><td><i class="fas fa-house-chimney "></i></td><td>DRAFT New HFSV Report</td><td>DRAFT of a new version of the Home Fire Safety Visits Report</td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-bandage "></i></td><td>[DRAFT] CS Admin - S&W Referrals</td><td></td><td>Prevention</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-business-time "></i></td><td>DRAFT New BFS Performance</td><td>DRAFT of a new version of the BFS Performance Report</td><td>Protection </td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-circle-info "></i></td><td>Incident Viewer</td><td>A single-page view of the key details for a single IRS record</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr><tr><td><i class="fas fa-fa-solid fa-dumbbell "></i></td><td>DRAFT Operational Exercises v.3</td><td>A draft version of the existing Exercises Report, with targets and a refreshed theme.</td><td>Response</td><td><i class="fas fa-lock text-danger "></i> Restricted</td></tr>					</tbody>
 				</table>
 			</div>
 		</div>
