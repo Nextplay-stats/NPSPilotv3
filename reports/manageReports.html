@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+        <title>orca v1.1.3.3 - reports - manageReports</title>
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/fontawesome/6.0.0/css/all.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style.loadspinner.css">
+        <link rel="stylesheet" href="/assets/css/style.bootstrap.overrides.css">
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.css">
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.css">
+    </head>
+    <body id="page-top">
+        <div class="liveBar">live site</div>
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                    <nav class="navbar navbar-expand-md navbar-default">
+                        <div class="container-fluid">
+                            <a class="navbar-left">
+                                <img src="/assets/img/logo.landscape.png" style="height: 2em; margin-right: .4em;" class="hiddenX"/>
+                            </a>
+                            <a class="navbar-brand" href="https://orca.syfire.gov.uk/">orca &nbsp;v1.1.3.3</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="mainNav">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="https://orca.syfire.gov.uk/">
+                                            <i class="fas fa-home"></i>
+                                            &nbsp;Home
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/reports" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-list"></i>
+                                            &nbsp;Reports
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/index">
+                                                    <i class="fas fa-chart-line"></i>
+                                                    &nbsp;View
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/manageReports">
+                                                    <i class="fas fa-list-alt"></i>
+                                                    &nbsp;Manage
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/commentary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-file-alt"></i>
+                                            &nbsp;Commentary
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/list">
+                                                    <i class="fas fa-list-alt"></i>
+                                                    &nbsp;View
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/scheduleList">
+                                                    <i class="fas fa-clock"></i>
+                                                    &nbsp;Schedules
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/users" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-users"></i>
+                                            &nbsp;Users
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/users/external">
+                                                    <i class="fas fa-arrow-alt-circle-left"></i>
+                                                    &nbsp;External Users
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/users/internal">
+                                                    <i class="fas fa-arrow-alt-circle-right"></i>
+                                                    &nbsp;Internal Users
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/admin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-gear"></i>
+                                            &nbsp;Admin
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/listGroups">
+                                                    <i class="fas fa-list-check"></i>
+                                                    &nbsp;Groups
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/newsFeed">
+                                                    <i class="fas fa-newspaper"></i>
+                                                    &nbsp;News Feed
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav navbar-right">
+                                    <li class="nav-item">
+                                        <a target="_blank" class="nav-link" href="https://orca.syfire.gov.uk/">
+                                            <i class="fas fa-window-restore"></i>
+                                            &nbsp;New Window
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="https://orca.syfire.gov.uk/home/help">
+                                            <i class="fas fa-question-circle"></i>
+                                            &nbsp;Help
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-user"></i>
+                                            &nbsp;Zane Burgess
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown01">
+                                            <a class="dropdown-item" href="https://orca.syfire.gov.uk/user">
+                                                <i class="fas fa-user"></i>
+                                                &nbsp;My User Profile
+                                            </a>
+                                            <a class="dropdown-item" href="https://orca.syfire.gov.uk/user/preferences">
+                                                <i class="fas fa-cogs"></i>
+                                                &nbsp;My Preferences
+                                            </a>
+                                            <form id="form_signin" method="post" action="https://orca.syfire.gov.uk/user/logout" class="form-inline">
+                                                <input name="session" value="logout" type="hidden">
+                                                <a class="dropdown-item" href="#" onClick="$('#form_signin').submit();">
+                                                    <i class="fas fa-sign-out-alt"></i>
+                                                    &nbsp;Sign Out
+                                                </a>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+                    <!-- <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-ui/jquery-ui-1.12.1/jquery-ui.js"></script> -->
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/popper/2.11.7/popper.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-easing/jquery.easing.min.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+                    <script type="text/javascript" src="/assets/js/scripts.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="/assets/js/ajax.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="/assets/js/modalforms.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/powerBI/2.14.1/powerbi.min.js"></script>
+                    <script type="text/javascript" src="/assets/js/scripts.powerbi.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootbox/6.0.0/bootbox.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap5-tags-master/1.4.41/tags.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/moment/2.29.4/moment.min.js"></script>
+                    <!-- TinyMCE -->
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/tinymce/5.8.2/tinymce.min.js"></script>
+                    <script type="text/javascript">
+                        sessionUser = 'C230186';
+                        lastActivity = '20250807 15:39';
+                    </script>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="https://orca.syfire.gov.uk/">
+                                        <i class="fas fa-home"></i>
+                                        &nbsp;Home
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="https://orca.syfire.gov.uk/reports">
+                                        <i class="fas fa-chart-area"></i>
+                                        &nbsp;Reports
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <i class="fas fa-tools"></i>
+                                    &nbsp;Manage Reports
+                                </li>
+                            </ol>
+                        </nav>
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="#" class="btn btn-primary" onClick="modalforms.formAddReport(event);">
+                                    <i class="fas fa-plus-circle"></i>
+                                    &nbsp;Add Report
+                                </a>
+                                &nbsp;
+                                <button type="button" class="btn btn-primary ml-1" onClick="modalforms.btnCopy_click(event, this);">
+                                    <i class="fas fa-file-export"></i>
+                                    &nbsp;Copy to External
+                                </button>
+                                <div class="gap gap-sm"></div>
+                                <table class="table table-responsiveX" id="manageReports" data-toggle="bootstrap-table" data-pagination="true" data-filter-control="true">
+                                    <thead class="thead-light">
+                                        <th data-field="uniqueID" data-sortable="true" data-filter-control="input">ID</th>
+                                        <th data-field="type" data-sortable="true" data-filter-control="select">Type</th>
+                                        <th data-field="desc" data-sortable="true" data-filter-control="input">Description</th>
+                                        <th data-field="appGroupID" data-sortable="true" data-filter-control="input">App Group ID</th>
+                                        <th data-field="reportID" data-sortable="true" data-filter-control="input">Report ID</th>
+                                        <th data-field="icon" data-sortable="false" data-filter-control="input">Icon</th>
+                                        <th data-field="class" data-sortable="true" data-filter-control="input">Class</th>
+                                        <th data-field="accessMode" data-sortable="true" data-filter-control="input">Access Mode</th>
+                                        <th data-field="status" data-sortable="true" data-filter-control="input">Status</th>
+                                        <th data-field="tags" data-sortable="true" data-filter-control="input">Tags</th>
+                                        <th data-field="category" data-sortable="true" data-filter-control="select">Category</th>
+                                        <th data-field="owner" data-sortable="true" data-filter-control="input">Owner</th>
+                                    </thead>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>report</td>
+                                        <td>
+                                            Home Fire Safety Visit Report<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'10');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'10');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="10">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>15d41b90-aecf-4d1a-b478-cbd39418545b</td>
+                                        <td>
+                                            <i class="fas fa-home h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>Home Safety Check, Fire Safety Visit, HSC, Target Address List, Prevention, HSC3, Partnership, CFS</td>
+                                        <td>Organisational</td>
+                                        <td>Steven Kay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>report</td>
+                                        <td>
+                                            Station Level Reports<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'12');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'12');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="12">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>c8d30e88-cd71-41ab-ad00-acc1e58a36d2</td>
+                                        <td>
+                                            <i class="fas fa-chart-bar h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>OPS</td>
+                                        <td>Any Categories</td>
+                                        <td>Steven Kay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>report</td>
+                                        <td>
+                                            High Risk Co-ordinator Report<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'14');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'14');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="14">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>b9516368-6c19-4f43-abf6-816ee69aff83</td>
+                                        <td>
+                                            <i class="fas fa-exclamation-triangle h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>CFS</td>
+                                        <td>Any Categories</td>
+                                        <td>Steven Kay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>report</td>
+                                        <td>
+                                            Gazetteer<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'15');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'15');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="15">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>258a92d6-bd92-4620-8248-2cb433528fb0</td>
+                                        <td>
+                                            <i class="fas fa-map h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>Support</td>
+                                        <td>Any Categories</td>
+                                        <td>Steven Kay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>report</td>
+                                        <td>
+                                            SSRI Overview Report (Crews)<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'17');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'17');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="17">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>2fb682a3-87b3-4c6c-9e77-2a3008941aa2</td>
+                                        <td>
+                                            <i class="fas fa-search h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>OPS</td>
+                                        <td>Any Categories</td>
+                                        <td>Steven Kay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32</td>
+                                        <td>report</td>
+                                        <td>
+                                            Quarterly Performance<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'32');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'32');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="32">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>85013e19-f211-4b79-b2ed-c279c39c7be3</td>
+                                        <td>
+                                            <i class="fas fa-chart-line h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>Support -  </td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>33</td>
+                                        <td>report</td>
+                                        <td>
+                                            Bonfire Stats<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'33');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'33');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="33">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>c4376a74-721b-4a98-8453-d127601ec6d7</td>
+                                        <td>
+                                            <i class="fas fa-burn h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>OPS</td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>46</td>
+                                        <td>report</td>
+                                        <td>
+                                            Ops Intel Management<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'46');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'46');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="46">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>35105d8c-6d25-4a7b-8bbe-f508635edcf0</td>
+                                        <td>
+                                            <i class="fas fa-radiation h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>OPS</td>
+                                        <td>Any Categories</td>
+                                        <td>Gavin Drury</td>
+                                    </tr>
+                                    <tr>
+                                        <td>47</td>
+                                        <td>report</td>
+                                        <td>
+                                            Incidents Attended<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'47');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'47');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="47">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>6150f229-d650-4915-af37-007d43351df1</td>
+                                        <td>
+                                            <i class="fas fa-fire-extinguisher h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>OPS</td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>report</td>
+                                        <td>
+                                            Response Standards Report<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'50');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'50');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="50">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>c51270a5-3fd4-4efd-99c7-7c4ee009cdb8</td>
+                                        <td>
+                                            <i class="fas fa-stopwatch h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>Ops, Support</td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>51</td>
+                                        <td>report</td>
+                                        <td>
+                                            Service Improvement Report<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'51');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'51');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="51">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>889dac6e-451e-4983-bcdf-8c094980e518</td>
+                                        <td>
+                                            <i class="fas fa-tasks h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-draft">
+                                                <i class="fas fa-pencil-ruler"></i>
+                                                &nbspDraft
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>54</td>
+                                        <td>report</td>
+                                        <td>
+                                            IRS Community Safety Custom Questions<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'54');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'54');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="54">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>09bfb0c9-05cf-4125-9c63-42670690f49c</td>
+                                        <td>
+                                            <i class="fas fa-shield-alt h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-unavailable">
+                                                <i class="fas fa-times-circle"></i>
+                                                &nbspUnavailable
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Sher Khan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1066</td>
+                                        <td>report</td>
+                                        <td>
+                                            LPI Report<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1066');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1066');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1066">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>6bc7430c-96c6-4017-a6e0-af2ea573bff2</td>
+                                        <td>
+                                            <i class="fas fa-chart-area h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>Local Performance indidcators   </td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1068</td>
+                                        <td>report</td>
+                                        <td>
+                                            Response Standards Briefing<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1068');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1068');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1068">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>f90622e7-4ef0-4221-a59e-ae2e8fcb0ff7</td>
+                                        <td>
+                                            <i class="fas fa-shipping-fast h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1077</td>
+                                        <td>report</td>
+                                        <td>
+                                            District Command Dashboard<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1077');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1077');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1077">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>73223556-e036-4605-a950-a335b568b519</td>
+                                        <td>
+                                            <i class="fas fa-chart-pie h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-unavailable">
+                                                <i class="fas fa-times-circle"></i>
+                                                &nbspUnavailable
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Gavin Drury</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1094</td>
+                                        <td>report</td>
+                                        <td>
+                                            Daily Incident Summary<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1094');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1094');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1094">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>9f95e383-db84-43c2-a6ca-e00cf0ff952e</td>
+                                        <td>
+                                            <i class="fas fa-calendar-day h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1098</td>
+                                        <td>report</td>
+                                        <td>
+                                            Risk Based Audit Programme (RBAP)<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1098');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1098');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1098">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>60a2685a-532e-4251-abd9-44c08503ad16</td>
+                                        <td>
+                                            <i class="fas fa-person-booth h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>BFS</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1099</td>
+                                        <td>report</td>
+                                        <td>
+                                            South Yorskhire Fire & Rescue Incident Search<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1099');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1099');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1099">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>1f0be3fd-b49b-47bd-9cf2-3d8c69a28948</td>
+                                        <td>
+                                            <i class="fas fa-map h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-unavailable">
+                                                <i class="fas fa-times-circle"></i>
+                                                &nbspUnavailable
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Jason Patrick</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1100</td>
+                                        <td>report</td>
+                                        <td>
+                                            RPAC RPC Report<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1100');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1100');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1100">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>b1e5b209-146b-4239-b78c-1e6941d378b5</td>
+                                        <td>
+                                            <i class="fas fa-magnifying-glass h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-unavailable">
+                                                <i class="fas fa-times-circle"></i>
+                                                &nbspUnavailable
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Jason Patrick</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1110</td>
+                                        <td>report</td>
+                                        <td>
+                                            FDSI<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1110');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1110');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1110">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>4645db8a-dec0-4be6-a072-1880ff6ab0c5</td>
+                                        <td>
+                                            <i class="fas fa-user-injured h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>CS, CFS, INCIDENTS, FDSI</td>
+                                        <td>CFS</td>
+                                        <td>Gavin Drury</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1111</td>
+                                        <td>report</td>
+                                        <td>
+                                            Sickness & Absence <br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1111');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1111');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1111">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>ee16314f-1d3c-4bd8-974e-aa319ab5f3fc</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-briefcase-medical h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1114</td>
+                                        <td>report</td>
+                                        <td>
+                                            BFS Performance<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1114');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1114');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1114">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>af1c9fa9-eee9-497a-841b-3b851a558fcb</td>
+                                        <td>
+                                            <i class="fas fa-business-time h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>BFS, PERFORMANCE</td>
+                                        <td>BFS</td>
+                                        <td>Gavin Drury</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1115</td>
+                                        <td>report</td>
+                                        <td>
+                                            Weather Records<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1115');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1115');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1115">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>ce07afa7-c0c7-47e2-b3d0-1409a7614f12</td>
+                                        <td>
+                                            <i class="fas fa-cloud-sun-rain h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1116</td>
+                                        <td>report</td>
+                                        <td>
+                                            Equipment Use<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1116');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1116');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1116">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>2b17a19a-d0e3-47a0-956a-fa9410458ca7</td>
+                                        <td>
+                                            <i class="fas fa-wrench h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1119</td>
+                                        <td>report</td>
+                                        <td>
+                                            On-Call Availability<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1119');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1119');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1119">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>dad5ed15-ce9a-4a36-8434-17c2230120dc</td>
+                                        <td>
+                                            <i class="fas fa-tachometer h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1121</td>
+                                        <td>report</td>
+                                        <td>
+                                            IRS Outstanding Incidents & 10 Percent Checks<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1121');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1121');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1121">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>0bb97f75-accc-4e6e-9e27-99c578788ca9</td>
+                                        <td>
+                                            <i class="fas fa-percent h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Richard Hughes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1123</td>
+                                        <td>report</td>
+                                        <td>
+                                            Control Call Handling<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1123');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1123');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1123">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>1a733e40-cef4-408c-8d81-b36991a11d58</td>
+                                        <td>
+                                            <i class="fas fa-phone h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>OPS</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1126</td>
+                                        <td>report</td>
+                                        <td>
+                                            RBAP - Draft<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1126');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1126');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1126">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>b9d565e9-8718-4214-85ac-1da70692ce14</td>
+                                        <td>
+                                            <i class="fas fa-boxes h5"></i>
+                                        </td>
+                                        <td class="text-info">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;info
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>BFS</td>
+                                        <td>Gavin Drury</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1127</td>
+                                        <td>report</td>
+                                        <td>
+                                            HRC Management Reports<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1127');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1127');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1127">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>98667384-6457-4344-ba62-19d637dbdda7</td>
+                                        <td>
+                                            <i class="fas fa-user-clock h5"></i>
+                                        </td>
+                                        <td class="text-info">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;info
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>CFS</td>
+                                        <td>Gavin Drury</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1135</td>
+                                        <td>report</td>
+                                        <td>
+                                            AFA Calls<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1135');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1135');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1135">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>c116999e-675c-4e9d-ad67-507c0d313e85</td>
+                                        <td>
+                                            <i class="fas fa-bullhorn h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Richard Hughes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1136</td>
+                                        <td>report</td>
+                                        <td>
+                                            Operational Exercises<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1136');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1136');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1136">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>5ac1b2e2-6ea2-459d-a902-15264813fffd</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-dumbbell h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>OPS</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1138</td>
+                                        <td>report</td>
+                                        <td>
+                                            DRAFT People LPIs - Workforce Diversity<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1138');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1138');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1138">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>f618367d-2bc8-4b16-b31d-2b169d78c173</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-universal-access h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1139</td>
+                                        <td>report</td>
+                                        <td>
+                                            ADF Analysis<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1139');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1139');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1139">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>d58a29b4-ae23-41b6-a4ed-bb12181733ca</td>
+                                        <td>
+                                            <i class="fas fa-fire h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>CFS</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1140</td>
+                                        <td>report</td>
+                                        <td>
+                                            Deliberate Fires Analysis<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1140');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1140');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1140">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>88d53ed6-b2fb-424b-bf4f-842c3423c5e2</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-dumpster-fire h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>CFS</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1141</td>
+                                        <td>report</td>
+                                        <td>
+                                            HRP Mobilisations & Attendances<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1141');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1141');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1141">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>7806a4e2-2b42-412f-837f-4c9db1d85929</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-weight-hanging h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Zane Burgess</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1142</td>
+                                        <td>report</td>
+                                        <td>
+                                            Mobilisations, Attendances & Standbys (Systel)<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1142');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1142');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1142">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>3d89f225-1735-406a-b124-fd62e0ff4d7b</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-road h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>OPS</td>
+                                        <td>Richard Hughes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1143</td>
+                                        <td>report</td>
+                                        <td>
+                                            Feature Tags & Sensitive Codes<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1143');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1143');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1143">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>e795c084-9c06-4b4a-89cb-09ec0f068aee</td>
+                                        <td>
+                                            <i class="fas fa-tags h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>OPS</td>
+                                        <td>Richard Hughes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1145</td>
+                                        <td>report</td>
+                                        <td>
+                                            DRAFT - CFRMIS & Experian Project<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1145');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1145');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1145">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>6032108a-e1f7-4593-8554-1ee8ee30c77c</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-route h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>BFS</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1147</td>
+                                        <td>report</td>
+                                        <td>
+                                            AVLS<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1147');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1147');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1147">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>72697045-f84e-4941-8f04-c50dade33929</td>
+                                        <td>
+                                            <i class="fas fa-truck-moving h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>OPS</td>
+                                        <td>Richard Hughes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1148</td>
+                                        <td>report</td>
+                                        <td>
+                                            DRAFT Gender Pay Gap<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1148');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1148');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1148">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>4c002a9b-f4d6-426b-85cf-5915361b3a59</td>
+                                        <td>
+                                            <i class="fas fa-scale-unbalanced h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Organisational</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1149</td>
+                                        <td>report</td>
+                                        <td>
+                                            DRAFT Mapping Demo<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1149');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1149');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1149">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>0f4210e6-4f85-470c-9898-ef0edbc9efea</td>
+                                        <td>
+                                            <i class="fas fa-fa-users-between-lines h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-unavailable">
+                                                <i class="fas fa-times-circle"></i>
+                                                &nbspUnavailable
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1152</td>
+                                        <td>report</td>
+                                        <td>
+                                            Water Related Incidents<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1152');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1152');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1152">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>917467a0-ff5d-4a85-84bb-09bd945c06bc</td>
+                                        <td>
+                                            <i class="fas fa-water h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-success">
+                                            <i class="fas fa-lock-open h5"></i>
+                                            &nbsp;Open
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td>OPS</td>
+                                        <td>Any Categories</td>
+                                        <td>Richard Hughes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1153</td>
+                                        <td>report</td>
+                                        <td>
+                                            DRAFT New HFSV Report<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1153');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1153');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1153">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>5f38cc0e-d67b-4004-af52-10119298fa09</td>
+                                        <td>
+                                            <i class="fas fa-house-chimney h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1154</td>
+                                        <td>report</td>
+                                        <td>
+                                            [DRAFT] CS Admin - S&W Referrals<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1154');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1154');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1154">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>9e4a10e6-c6cc-4041-968a-e041f759b6f0</td>
+                                        <td>
+                                            <i class="fas fa-bandage h5"></i>
+                                        </td>
+                                        <td class="text-info">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;info
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>CFS</td>
+                                        <td>Gavin Drury</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1155</td>
+                                        <td>report</td>
+                                        <td>
+                                            DRAFT New BFS Performance<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1155');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1155');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1155">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>b3d98f8c-5b84-48db-bb1f-e8cb1a762aed</td>
+                                        <td>
+                                            <i class="fas fa-business-time h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>BFS</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1156</td>
+                                        <td>report</td>
+                                        <td>
+                                            Incident Viewer<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1156');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1156');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1156">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>29ca073f-f514-4245-b447-de8ec1c15df2</td>
+                                        <td>8c122d38-cd34-4e60-934d-7bbf2b28126a</td>
+                                        <td>
+                                            <i class="fas fa-circle-info h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1157</td>
+                                        <td>report</td>
+                                        <td>
+                                            TEST_Reports 2.0<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1157');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1157');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1157">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>88decbd1-cf86-434e-9ed8-3f5f30543a8f</td>
+                                        <td>a2f0-8465-4c61-9b8e-1c88f49ccde4</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-route h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>Any Categories</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1158</td>
+                                        <td>report</td>
+                                        <td>
+                                            DRAFT Operational Exercises v.3<br/>
+                                            <form class="form-inline" action="/permissions/reportAccess" method="POST">
+                                                <button type="button" class="btn btn-sm btn-primary mr-1" onClick="modalforms.formModifyReport(event,'1158');">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    &nbsp;Modify
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1" onClick="modalforms.deleteReport(event,'1158');">
+                                                    <i class="fas fa-times"></i>
+                                                    &nbsp;Delete
+                                                </button>
+                                                <button type="submit" class="btn btn-sm btn-info" name="rID" value="1158">
+                                                    <i class="fas fa-key"></i>
+                                                    &nbsp;Permissions
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>7da80490-b868-48e6-8ced-7565025488a2</td>
+                                        <td>34e15e68-1dd9-4d39-8eb0-306a833613a0</td>
+                                        <td>
+                                            <i class="fas fa-fa-solid fa-dumbbell h5"></i>
+                                        </td>
+                                        <td class="text-primary">
+                                            <i class="fas fa-circle"></i>
+                                            &nbsp;primary
+                                        </td>
+                                        <td class="text-danger">
+                                            <i class="fas fa-lock h5"></i>
+                                            &nbsp;Restricted
+                                        </td>
+                                        <td>
+                                            <div class="status-live">
+                                                <i class="fas fa-book-reader"></i>
+                                                &nbspLive
+                                        </td>
+                                        <td></td>
+                                        <td>OPS</td>
+                                        <td>Amy Morton</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+                <!-- Footer -->
+                <footer class="sticky-footer">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            orca v1.1.3.3<br/>
+                            <span>Copyright &copy;South Yorkshire Fire &amp;Rescue 2025</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+    </body>
+</html>
