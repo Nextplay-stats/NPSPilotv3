@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+        <title>orca v1.1.3.3 - users - internal</title>
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/fontawesome/6.0.0/css/all.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style.loadspinner.css">
+        <link rel="stylesheet" href="/assets/css/style.bootstrap.overrides.css">
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.css">
+        <link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.css">
+    </head>
+    <body id="page-top">
+        <div class="liveBar">live site</div>
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                    <nav class="navbar navbar-expand-md navbar-default">
+                        <div class="container-fluid">
+                            <a class="navbar-left">
+                                <img src="/assets/img/logo.landscape.png" style="height: 2em; margin-right: .4em;" class="hiddenX"/>
+                            </a>
+                            <a class="navbar-brand" href="https://orca.syfire.gov.uk/">orca &nbsp;v1.1.3.3</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="mainNav">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="https://orca.syfire.gov.uk/">
+                                            <i class="fas fa-home"></i>
+                                            &nbsp;Home
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/reports" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-list"></i>
+                                            &nbsp;Reports
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/index">
+                                                    <i class="fas fa-chart-line"></i>
+                                                    &nbsp;View
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/manageReports">
+                                                    <i class="fas fa-list-alt"></i>
+                                                    &nbsp;Manage
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/commentary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-file-alt"></i>
+                                            &nbsp;Commentary
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/list">
+                                                    <i class="fas fa-list-alt"></i>
+                                                    &nbsp;View
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/scheduleList">
+                                                    <i class="fas fa-clock"></i>
+                                                    &nbsp;Schedules
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/users" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-users"></i>
+                                            &nbsp;Users
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/users/external">
+                                                    <i class="fas fa-arrow-alt-circle-left"></i>
+                                                    &nbsp;External Users
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/users/internal">
+                                                    <i class="fas fa-arrow-alt-circle-right"></i>
+                                                    &nbsp;Internal Users
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/admin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-gear"></i>
+                                            &nbsp;Admin
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarAvailability">
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/listGroups">
+                                                    <i class="fas fa-list-check"></i>
+                                                    &nbsp;Groups
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/newsFeed">
+                                                    <i class="fas fa-newspaper"></i>
+                                                    &nbsp;News Feed
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav navbar-right">
+                                    <li class="nav-item">
+                                        <a target="_blank" class="nav-link" href="https://orca.syfire.gov.uk/">
+                                            <i class="fas fa-window-restore"></i>
+                                            &nbsp;New Window
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="https://orca.syfire.gov.uk/home/help">
+                                            <i class="fas fa-question-circle"></i>
+                                            &nbsp;Help
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-user"></i>
+                                            &nbsp;Zane Burgess
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown01">
+                                            <a class="dropdown-item" href="https://orca.syfire.gov.uk/user">
+                                                <i class="fas fa-user"></i>
+                                                &nbsp;My User Profile
+                                            </a>
+                                            <a class="dropdown-item" href="https://orca.syfire.gov.uk/user/preferences">
+                                                <i class="fas fa-cogs"></i>
+                                                &nbsp;My Preferences
+                                            </a>
+                                            <form id="form_signin" method="post" action="https://orca.syfire.gov.uk/user/logout" class="form-inline">
+                                                <input name="session" value="logout" type="hidden">
+                                                <a class="dropdown-item" href="#" onClick="$('#form_signin').submit();">
+                                                    <i class="fas fa-sign-out-alt"></i>
+                                                    &nbsp;Sign Out
+                                                </a>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+                    <!-- <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-ui/jquery-ui-1.12.1/jquery-ui.js"></script> -->
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/popper/2.11.7/popper.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-easing/jquery.easing.min.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+                    <script type="text/javascript" src="/assets/js/scripts.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="/assets/js/ajax.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="/assets/js/modalforms.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/powerBI/2.14.1/powerbi.min.js"></script>
+                    <script type="text/javascript" src="/assets/js/scripts.powerbi.js?version=1.1.3.3"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootbox/6.0.0/bootbox.min.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap5-tags-master/1.4.41/tags.js"></script>
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/moment/2.29.4/moment.min.js"></script>
+                    <!-- TinyMCE -->
+                    <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/tinymce/5.8.2/tinymce.min.js"></script>
+                    <script type="text/javascript">
+                        sessionUser = 'C230186';
+                        lastActivity = '20250807 15:45';
+                    </script>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="https://orca.syfire.gov.uk/">
+                                        <i class="fas fa-home"></i>
+                                        &nbsp;Home
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="https://orca.syfire.gov.uk/users">
+                                        <i class="fas fa-users"></i>
+                                        &nbsp;Users
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <i class="fas fa-arrow-alt-circle-right"></i>
+                                    &nbsp;Internal Users
+                                </li>
+                            </ol>
+                        </nav>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">
+                                    <i class="fas fa-arrow-alt-circle-right fa-2x align-middle"></i>
+                                    &nbsp;Manage Permissions for Internal Users
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>Objects</h4>
+                                        <div>Click an object to show people with access.</div>
+                                    </div>
+                                    <div class="col">
+                                        <h4>People with Access</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="allow_login" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">allow_login</div>
+                                                    <div>User can login to ORCA.</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.10" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.10</div>
+                                                    <div>PowerBI Report Home Fire Safety Visit Report</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1066" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1066</div>
+                                                    <div>PowerBI Report LPI Report</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1068" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1068</div>
+                                                    <div>PowerBI Report Response Standards Briefing</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1077" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1077</div>
+                                                    <div>PowerBI Report District Command Dashboard</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1094" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1094</div>
+                                                    <div>PowerBI Report Daily Incident Summary</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1098" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1098</div>
+                                                    <div>PowerBI Report Risk Based Audit Programme (RBAP)</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1099" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1099</div>
+                                                    <div>PowerBI Report South Yorskhire Fire & Rescue Incident Search</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1100" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1100</div>
+                                                    <div>PowerBI Report RPAC RPC Report</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1110" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1110</div>
+                                                    <div>PowerBI Report FDSI</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1111" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1111</div>
+                                                    <div>PowerBI Report Sickness & Absence </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1114" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1114</div>
+                                                    <div>PowerBI Report BFS Performance</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1115" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1115</div>
+                                                    <div>PowerBI Report Weather Records</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1116" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1116</div>
+                                                    <div>PowerBI Report Equipment Use</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1119" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1119</div>
+                                                    <div>PowerBI Report On-Call Availability</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1121" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1121</div>
+                                                    <div>PowerBI Report IRS Outstanding Incidents & 10 Percent Checks</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1123" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1123</div>
+                                                    <div>PowerBI Report Control Call Handling</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1126" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1126</div>
+                                                    <div>PowerBI Report RBAP - Draft</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1127" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1127</div>
+                                                    <div>PowerBI Report HRC Management Reports</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1135" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1135</div>
+                                                    <div>PowerBI Report AFA Calls</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1136" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1136</div>
+                                                    <div>PowerBI Report Operational Exercises</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1138" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1138</div>
+                                                    <div>PowerBI Report DRAFT People LPIs - Workforce Diversity</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1139" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1139</div>
+                                                    <div>PowerBI Report ADF Analysis</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1140" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1140</div>
+                                                    <div>PowerBI Report Deliberate Fires Analysis</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1141" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1141</div>
+                                                    <div>PowerBI Report HRP Mobilisations & Attendances</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1142" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1142</div>
+                                                    <div>PowerBI Report Mobilisations, Attendances & Standbys (Systel)</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1143" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1143</div>
+                                                    <div>PowerBI Report Feature Tags & Sensitive Codes</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1145" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1145</div>
+                                                    <div>PowerBI Report DRAFT - CFRMIS & Experian Project</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1147" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1147</div>
+                                                    <div>PowerBI Report AVLS</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1148" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1148</div>
+                                                    <div>PowerBI Report DRAFT Gender Pay Gap</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1149" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1149</div>
+                                                    <div>PowerBI Report DRAFT Mapping Demo</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1152" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1152</div>
+                                                    <div>PowerBI Report Water Related Incidents</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1153" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1153</div>
+                                                    <div>PowerBI Report DRAFT New HFSV Report</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1154" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1154</div>
+                                                    <div>PowerBI Report [DRAFT] CS Admin - S&W Referrals</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1155" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1155</div>
+                                                    <div>PowerBI Report DRAFT New BFS Performance</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1156" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1156</div>
+                                                    <div>PowerBI Report Incident Viewer</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1157" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1157</div>
+                                                    <div>PowerBI Report TEST_Reports 2.0</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.1158" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.1158</div>
+                                                    <div>PowerBI Report DRAFT Operational Exercises v.3</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.12" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.12</div>
+                                                    <div>PowerBI Report Station Level Reports</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.14" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.14</div>
+                                                    <div>PowerBI Report High Risk Co-ordinator Report</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.15" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.15</div>
+                                                    <div>PowerBI Report Gazetteer</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.17" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.17</div>
+                                                    <div>PowerBI Report SSRI Overview Report (Crews)</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.32" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.32</div>
+                                                    <div>PowerBI Report Quarterly Performance</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.33" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.33</div>
+                                                    <div>PowerBI Report Bonfire Stats</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.46" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.46</div>
+                                                    <div>PowerBI Report Ops Intel Management</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.47" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.47</div>
+                                                    <div>PowerBI Report Incidents Attended</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.50" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.50</div>
+                                                    <div>PowerBI Report Response Standards Report</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.51" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.51</div>
+                                                    <div>PowerBI Report Service Improvement Report</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports.powerbi.54" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports.powerbi.54</div>
+                                                    <div>PowerBI Report IRS Community Safety Custom Questions</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports_admin" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports_admin</div>
+                                                    <div>User can manage all reports.</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="reports_user" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">reports_user</div>
+                                                    <div>User can manage their own reports.</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-success clearfix w-100 mb-1" type="button" data-object-name="user_admin" onclick="users.btnInternal_click(event, this);">
+                                                <div class="float-left mr-1">
+                                                    <i class="fas fa-lock fa-3x"></i>
+                                                </div>
+                                                <div class="float-left">
+                                                    <div class="text-left">user_admin</div>
+                                                    <div>User can manage permissions and external user accounts.</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="colMembers"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+                <!-- Footer -->
+                <footer class="sticky-footer">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            orca v1.1.3.3<br/>
+                            <span>Copyright &copy;South Yorkshire Fire &amp;Rescue 2025</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+        <script type="text/javascript" src="/assets/js/scripts.users.js"></script>
+    </body>
+</html>
