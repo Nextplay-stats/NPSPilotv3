@@ -1,14 +1,14 @@
 <html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
-	<title>orca v1.1.3.3 - reports - viewPBIReport</title>
-	<link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/fontawesome/6.0.0/css/all.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
-	<link rel="stylesheet" href="/assets/css/style.loadspinner.css">
-	<link rel="stylesheet" href="/assets/css/style.bootstrap.overrides.css">
-	<link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.css">
-	<link rel="stylesheet" href="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.css">
+	<title>NPS v1.1.1.3 - reports - viewPBIReport</title>
+	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap/5.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/fontawesome/6.0.0/css/all.css">
+	<link rel="stylesheet" href="/NPSPilotv3/assets/css/style.css">
+	<link rel="stylesheet" href="/NPSPilotv3/assets/css/style.loadspinner.css">
+	<link rel="stylesheet" href="/NPSPilotv3/assets/css/style.bootstrap.overrides.css">
+	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.css">
+	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.css">
 </head>
 <body id="page-top" class="">
 
@@ -18,39 +18,39 @@
 		<div id="content-wrapper" class="d-flex flex-column">
 			<!-- Main Content -->
 			<div id="content">
-				<nav class="navbar navbar-expand-md navbar-default">	<div class="container-fluid">		<a class="navbar-left"><img src="/assets/img/logo.landscape.png" style="height: 2em; margin-right: .4em;" class="hiddenX"></a>		<a class="navbar-brand" href="https://orca.syfire.gov.uk/">orca&nbsp;v1.1.3.3</a>		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">			<span class="navbar-toggler-icon"></span>		</button>		<div class="collapse navbar-collapse" id="mainNav">			<ul class="navbar-nav me-auto">			<li class="nav-item ">				<a class="nav-link " href="https://orca.syfire.gov.uk/"><i class="fas fa-home"></i>&nbsp;Home</a>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/reports" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-list"></i>&nbsp;Reports</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/index"><i class="fas fa-chart-line"></i>&nbsp;View</a>	</li>	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/reports/manageReports"><i class="fas fa-list-alt"></i>&nbsp;Manage</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/commentary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-file-alt"></i>&nbsp;Commentary</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/list"><i class="fas fa-list-alt"></i>&nbsp;View</a>	</li>	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/commentary/scheduleList"><i class="fas fa-clock"></i>&nbsp;Schedules</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/users" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i>&nbsp;Users</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/users/external"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;External Users</a>	</li>	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/users/internal"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;Internal Users</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://orca.syfire.gov.uk/admin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-gear"></i>&nbsp;Admin</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/listGroups"><i class="fas fa-list-check"></i>&nbsp;Groups</a>	</li>	<li>		<a class="dropdown-item " href="https://orca.syfire.gov.uk/admin/newsFeed"><i class="fas fa-newspaper"></i>&nbsp;News Feed</a>	</li>			</ul>			</li>			</ul>			<ul class="navbar-nav navbar-right">				<li class="nav-item">					<a target="_blank" class="nav-link" href="https://orca.syfire.gov.uk/"><i class="fas fa-window-restore"></i>&nbsp;New Window</a>				</li>				<li class="nav-item">					<a class="nav-link" href="https://orca.syfire.gov.uk/home/help"><i class="fas fa-question-circle"></i>&nbsp;Help</a>				</li>			<li class="nav-item dropdown">
+				<nav class="navbar navbar-expand-md navbar-default">	<div class="container-fluid">		<a class="navbar-left"><img src="/assets/img/logo.landscape.png" style="height: 2em; margin-right: .4em;" class="hiddenX"></a>		<a class="navbar-brand" href="https://nextplay-stats.github.io/NPSPilotv3/">NPS&nbsp;v1.1.1.3</a>		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">			<span class="navbar-toggler-icon"></span>		</button>		<div class="collapse navbar-collapse" id="mainNav">			<ul class="navbar-nav me-auto">			<li class="nav-item ">				<a class="nav-link " href="https://nextplay-stats.github.io/NPSPilotv3/"><i class="fas fa-home"></i>&nbsp;Home</a>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/reports" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-list"></i>&nbsp;Reports</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/reports/index"><i class="fas fa-chart-line"></i>&nbsp;View</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/reports/manageReports"><i class="fas fa-list-alt"></i>&nbsp;Manage</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/commentary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-file-alt"></i>&nbsp;Commentary</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/commentary/list"><i class="fas fa-list-alt"></i>&nbsp;View</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/commentary/scheduleList"><i class="fas fa-clock"></i>&nbsp;Schedules</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/users" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i>&nbsp;Users</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/users/external"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;External Users</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/users/internal"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;Internal Users</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/admin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-gear"></i>&nbsp;Admin</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/admin/listGroups"><i class="fas fa-list-check"></i>&nbsp;Groups</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/admin/newsFeed"><i class="fas fa-newspaper"></i>&nbsp;News Feed</a>	</li>			</ul>			</li>			</ul>			<ul class="navbar-nav navbar-right">				<li class="nav-item">					<a target="_blank" class="nav-link" href="https://nextplay-stats.github.io/NPSPilotv3/"><i class="fas fa-window-restore"></i>&nbsp;New Window</a>				</li>				<li class="nav-item">					<a class="nav-link" href="https://nextplay-stats.github.io/NPSPilotv3/home/help"><i class="fas fa-question-circle"></i>&nbsp;Help</a>				</li>			<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>&nbsp;Zane Burgess</a>
 									<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown01">
-										<a class="dropdown-item" href="https://orca.syfire.gov.uk/user"><i class="fas fa-user"></i>&nbsp;My User Profile</a>
-										<a class="dropdown-item" href="https://orca.syfire.gov.uk/user/preferences"><i class="fas fa-cogs"></i>&nbsp;My Preferences</a>
-										<form id="form_signin" method="post" action="https://orca.syfire.gov.uk/user/logout" class="form-inline">
+										<a class="dropdown-item" href="https://nextplay-stats.github.io/NPSPilotv3/user"><i class="fas fa-user"></i>&nbsp;My User Profile</a>
+										<a class="dropdown-item" href="https://nextplay-stats.github.io/NPSPilotv3/user/preferences"><i class="fas fa-cogs"></i>&nbsp;My Preferences</a>
+										<form id="form_signin" method="post" action="https://nextplay-stats.github.io/NPSPilotv3/user/logout" class="form-inline">
 											<input name="session" value="logout" type="hidden">
 											<a class="dropdown-item" href="#" onclick="$('#form_signin').submit();"><i class="fas fa-sign-out-alt"></i>&nbsp;Sign Out</a>
 										</form>
 									</div>
-								</li>			</ul>		</div>	</div></nav><script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery/jquery-3.4.1/jquery-3.4.1.min.js"></script>
-<!-- <script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-ui/jquery-ui-1.12.1/jquery-ui.js"></script> -->
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/popper/2.11.7/popper.min.js"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/jquery-easing/jquery.easing.min.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.js"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
-<script type="text/javascript" src="/assets/js/scripts.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="/assets/js/ajax.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="/assets/js/modalforms.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/powerBI/2.14.1/powerbi.min.js"></script>
-<script type="text/javascript" src="/assets/js/scripts.powerbi.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootbox/6.0.0/bootbox.min.js"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/bootstrap5-tags-master/1.4.41/tags.js"></script>
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/moment/2.29.4/moment.min.js"></script>
+								</li>			</ul>		</div>	</div></nav><script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<!-- <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery-ui/jquery-ui-1.12.1/jquery-ui.js"></script> -->
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/popper/2.11.7/popper.min.js"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery-easing/jquery.easing.min.js?version=1.1.3.3"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+<script type="text/javascript" src="/NPSPilotv3/assets/js/scripts.js?version=1.1.3.3"></script>
+<script type="text/javascript" src="/NPSPilotv3/assets/js/ajax.js?version=1.1.3.3"></script>
+<script type="text/javascript" src="/NPSPilotv3/assets/js/modalforms.js?version=1.1.3.3"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/powerBI/2.14.1/powerbi.min.js"></script>
+<script type="text/javascript" src="/NPSPilotv3/assets/js/scripts.powerbi.js?version=1.1.3.3"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootbox/6.0.0/bootbox.min.js"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap5-tags-master/1.4.41/tags.js"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/moment/2.29.4/moment.min.js"></script>
 <!-- TinyMCE -->
-<script type="text/javascript" src="https://orca.syfire.gov.uk/global_plugins/tinymce/5.8.2/tinymce.min.js"></script>
+<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/tinymce/5.8.2/tinymce.min.js"></script>
 <script type="text/javascript">
 	sessionUser = 'C230186';
 	lastActivity = '20250813 17:37';
 </script>				<!-- Begin Page Content -->
 				<div class="container-fluid">
-					<nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="https://orca.syfire.gov.uk/"><i class="fas fa-home"></i>&nbsp;Home</a></li><li class="breadcrumb-item"><a href="https://orca.syfire.gov.uk/reports"><i class="fas fa-chart-area"></i>&nbsp;Reports</a></li><li class="breadcrumb-item active"><i class="fas fa-search"></i>&nbsp;SSRI Overview Report (Crews)</li></ol></nav><input id="fID" value="17" type="hidden">
+					<nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="https://nextplay-stats.github.io/NPSPilotv3/"><i class="fas fa-home"></i>&nbsp;Home</a></li><li class="breadcrumb-item"><a href="https://nextplay-stats.github.io/NPSPilotv3/reports"><i class="fas fa-chart-area"></i>&nbsp;Reports</a></li><li class="breadcrumb-item active"><i class="fas fa-search"></i>&nbsp;SSRI Overview Report (Crews)</li></ol></nav><input id="fID" value="17" type="hidden">
 <div class="row">
 	<div class="col">
 		<button type="button" class="btn btn-primary btn-sm float-right" onclick="_powerbi.fullscreen();" data-toggle="tooltip" data-trigger="hover" aria-label="Full Screen" data-bs-original-title="Full Screen"><i class="fas fa-external-link-alt"></i></button>
@@ -69,8 +69,8 @@
 <footer class="sticky-footer">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-        orca v1.1.3.3<br>
-        <span>Copyright © South Yorkshire Fire &amp; Rescue 2025</span>
+        NPS v1.1.1.3<br>
+        <span>Copyright © NextPlay Stats</span>
         </div>
     </div>
 </footer>
