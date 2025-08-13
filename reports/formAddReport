@@ -1,0 +1,96 @@
+<html><head></head><body><form id="formAddReport">
+				<input type="hidden" name="rID" value="0">
+				<div class="form-group row">
+					<label for="cboType" class="col-sm-2 col-form-label">Type</label>
+					<div class="col-sm">
+						<select name="rType" id="cboType" class="form-select"><option value="report">Report</option><option value="dashboard">Dashboard</option>
+						</select>
+					</div>
+				</div>
+	
+				<div class="form-group row">
+					<label for="txtDesc" class="col-sm-2 col-form-label">Description</label>
+					<div class="col-sm">
+						<input name="rDesc" id="txtDesc" class="form-control" value="" required="">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="txtComments" class="col-sm-2 col-form-label">Comments</label>
+					<div class="col-sm">
+						<input name="rComments" id="txtComments" class="form-control" value="" maxlength="500">
+					</div>
+				</div>
+	
+				<div class="form-group row">
+					<label for="txtAppGroupID" class="col-sm-2 col-form-label">App Group ID</label>
+					<div class="col-sm">
+						<input name="rAppGroupID" id="txtAppGroupID" class="form-control" value="" required="">
+					</div>
+				</div>
+	
+				<div class="form-group row">
+					<label for="txtReportID" class="col-sm-2 col-form-label">Report ID</label>
+					<div class="col-sm">
+						<input name="rReportID" id="txtReportID" class="form-control" value="">
+					</div>
+				</div>
+	
+				<div class="form-group row">
+					<label for="txtIcon" class="col-sm-2 col-form-label">Icon</label>
+					<div class="col-sm">
+						<input name="rIcon" id="txtIcon" class="form-control" value="">
+					</div>
+				</div>
+	
+				<div class="form-group row">
+					<label for="cboClass" class="col-sm-2 col-form-label">Class</label>
+					<div class="col-sm">
+						<select name="rClass" id="cboClass" class="form-select"><option value="primary">Primary</option><option value="info">Info</option>
+						</select>
+					</div>
+				</div>
+	
+				<div class="form-group row">
+					<label for="cboAccessMode" class="col-sm-2 col-form-label">Access Mode&nbsp;<i class="fas fa-info-circle" data-html="true" data-toggle="tooltip" title="&lt;ul&gt;&lt;li&gt;Open - Visible to all in RMS.&lt;/li&gt;&lt;li&gt;Restricted - Visible to specific people RMS&lt;/li&gt;&lt;/ul&gt;"></i></label>
+					<div class="col-sm">
+						<select name="rAccessMode" id="cboAccessMode" class="form-select"><option value="0">Open</option><option value="1">Restricted</option>
+						</select>
+					</div>
+				</div>
+	
+				<div class="form-group row">
+					<label for="cboStatus" class="col-sm-2 col-form-label">Status&nbsp;<i class="fas fa-info-circle" data-html="true" data-toggle="tooltip" title="&lt;ul&gt;&lt;li&gt;Draft - Visible to owner and report admins.&lt;/li&gt;&lt;li&gt;Live - Visible to all with permission.&lt;/li&gt;&lt;li&gt;Unavailable - Hidden from view page.&lt;/li&gt;&lt;/ul&gt;"></i></label>
+					<div class="col-sm">
+						<select name="rStatus" id="cboStatus" class="form-select"><option value="0" selected="">Draft</option><option value="1">Live</option><option value="2">Unavailable</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="txtTags" class="col-sm-2 col-form-label">Tags</label>
+					<div class="col-sm">
+						<input name="rTags" id="txtTags" class="form-control" value="">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="cboCategory" class="col-sm-2 col-form-label">Category</label>
+					<div class="col-sm">
+						<select name="rCategory" id="cboCategory" class="form-select" required=""><option value="Any Categories">Any Categories</option><option value="CFS">CFS</option><option value="BFS">BFS</option><option value="OPS">OPS</option><option value="SGPBRT">SGPBRT</option><option value="Organisational">Organisational</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="cboGroups" class="col-sm-2 col-form-label">Display Groups</label>
+					<div class="col-sm">
+						<select name="rGroups[]" id="cboGroups" class="form-select" data-allow-clear="true" multiple="">
+							<option disabled="" hidden="" value="">Choose report groups...</option><option value="1">Protection </option><option value="2">Prevention</option><option value="3">People </option><option value="4">Response</option><option value="5">Corporate</option>
+						</select>
+					</div>
+				</div>
+				<br>
+
+			</form>
+			<a href="#" class="btn btn-primary" onclick="return validateForm(event,'formAddReport',function() { modalforms.saveAddReport(event); });"><i class="fas fa-save"></i>&nbsp;Save</a>&nbsp;<a href="#" class="btn btn-secondary" onclick="event.preventDefault(); removeModal('#modal_formAddReport');">Cancel</a></body></html>
