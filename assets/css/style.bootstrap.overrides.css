@@ -42,10 +42,10 @@
   /*bold version*/
   @font-face {
 	font-family: myNunito;
-	src: url('/assets/fonts/NunitoSans-Bold.ttf');
+	src: url('/NPSPilotv3/assets/fonts/NunitoSans-Bold.ttf');
 	src: 
 		local('Nunito'),
-		url('/assets/fonts/NunitoSans-Bold.ttf'),
+		url('/NPSPilotv3/assets/fonts/NunitoSans-Bold.ttf'),
 		format('truetype');
 	font-weight: bold;
 }
