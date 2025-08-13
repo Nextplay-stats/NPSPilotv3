@@ -32,10 +32,10 @@
   
   @font-face {
 	font-family: myNunito;
-	src: url('/assets/fonts/NunitoSans-Regular.ttf'); /* IE9 Compat Modes */
+	src: url('/NPSPilotv3/assets/fonts/NunitoSans-Regular.ttf'); /* IE9 Compat Modes */
 	src: 
 		local('Nunito'),
-		url('/assets/fonts/NunitoSans-Regular.ttf'),
+		url('/NPSPilotv3/assets/fonts/NunitoSans-Regular.ttf'),
 		format('truetype');
   }
 
