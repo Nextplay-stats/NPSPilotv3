@@ -1,231 +1,135 @@
-<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
-	<title>NPS v1.1.1.3 - reports - manageReports</title>
-	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap/5.3.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/fontawesome/6.0.0/css/all.css">
-	<link rel="stylesheet" href="/NPSPilotv3/assets/css/style.css">
-	<link rel="stylesheet" href="/NPSPilotv3/assets/css/style.loadspinner.css">
-	<link rel="stylesheet" href="/NPSPilotv3/assets/css/style.bootstrap.overrides.css">
-	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.css">
-	<link rel="stylesheet" href="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.css">
-</head>
-<body id="page-top" class="modal-open" style="overflow: hidden; padding-right: 19px;">
+<form id="formModifyReport">
+  <input type="hidden" name="rID" value="{{rID}}">
 
-	<div class="liveBar">live site</div>	<!-- Page Wrapper -->
-	<div id="wrapper">
-		<!-- Content Wrapper -->
-		<div id="content-wrapper" class="d-flex flex-column">
-			<!-- Main Content -->
-			<div id="content">
-				<nav class="navbar navbar-expand-md navbar-default">	<div class="container-fluid">		<a class="navbar-left"><img src="/NPSPilotv3/assets/img/logo.landscape.png" style="height: 2em; margin-right: .4em;" class="hiddenX"></a>		<a class="navbar-brand" href="https://nextplay-stats.github.io/NPSPilotv3/">orca&nbsp;v1.1.3.3</a>		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">			<span class="navbar-toggler-icon"></span>		</button>		<div class="collapse navbar-collapse" id="mainNav">			<ul class="navbar-nav me-auto">			<li class="nav-item ">				<a class="nav-link " href="https://nextplay-stats.github.io/NPSPilotv3/"><i class="fas fa-home"></i>&nbsp;Home</a>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/reports" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-list"></i>&nbsp;Reports</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/reports/index"><i class="fas fa-chart-line"></i>&nbsp;View</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/reports/manageReports"><i class="fas fa-list-alt"></i>&nbsp;Manage</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/commentary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-file-alt"></i>&nbsp;Commentary</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/commentary/list"><i class="fas fa-list-alt"></i>&nbsp;View</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/commentary/scheduleList"><i class="fas fa-clock"></i>&nbsp;Schedules</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/users" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i>&nbsp;Users</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/users/external"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;External Users</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/users/internal"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;Internal Users</a>	</li>			</ul>			</li>			<li class="nav-item dropdown">				<a class="nav-link dropdown-toggle" href="https://nextplay-stats.github.io/NPSPilotv3/admin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-gear"></i>&nbsp;Admin</a>			<ul class="dropdown-menu" aria-labelledby="navbarAvailability">	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/admin/listGroups"><i class="fas fa-list-check"></i>&nbsp;Groups</a>	</li>	<li>		<a class="dropdown-item " href="https://nextplay-stats.github.io/NPSPilotv3/admin/newsFeed"><i class="fas fa-newspaper"></i>&nbsp;News Feed</a>	</li>			</ul>			</li>			</ul>			<ul class="navbar-nav navbar-right">				<li class="nav-item">					<a target="_blank" class="nav-link" href="https://nextplay-stats.github.io/NPSPilotv3/"><i class="fas fa-window-restore"></i>&nbsp;New Window</a>				</li>				<li class="nav-item">					<a class="nav-link" href="https://nextplay-stats.github.io/NPSPilotv3/home/help"><i class="fas fa-question-circle"></i>&nbsp;Help</a>				</li>			<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>&nbsp;Zane Burgess</a>
-									<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown01">
-										<a class="dropdown-item" href="https://nextplay-stats.github.io/NPSPilotv3/user"><i class="fas fa-user"></i>&nbsp;My User Profile</a>
-										<a class="dropdown-item" href="https://nextplay-stats.github.io/NPSPilotv3/user/preferences"><i class="fas fa-cogs"></i>&nbsp;My Preferences</a>
-										<form id="form_signin" method="post" action="https://nextplay-stats.github.io/NPSPilotv3/user/logout" class="form-inline">
-											<input name="session" value="logout" type="hidden">
-											<a class="dropdown-item" href="#" onclick="$('#form_signin').submit();"><i class="fas fa-sign-out-alt"></i>&nbsp;Sign Out</a>
-										</form>
-									</div>
-								</li>			</ul>		</div>	</div></nav><script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery/jquery-3.4.1/jquery-3.4.1.min.js"></script>
-<!-- <script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery-ui/jquery-ui-1.12.1/jquery-ui.js"></script> -->
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/popper/2.11.7/popper.min.js"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/jquery-easing/jquery.easing.min.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/bootstrap-table.min.js"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap-table/1.22.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
-<script type="text/javascript" src="/NPSPilotv3/assets/js/scripts.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="/NPSPilotv3/assets/js/ajax.js?version=1.1.3.3"></script>
-<script type="text/javascript" src=/NPSPilotv3"/assets/js/modalforms.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/powerBI/2.14.1/powerbi.min.js"></script>
-<script type="text/javascript" src="/NPSPilotv3/assets/js/scripts.powerbi.js?version=1.1.3.3"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootbox/6.0.0/bootbox.min.js"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/bootstrap5-tags-master/1.4.41/tags.js"></script>
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/moment/2.29.4/moment.min.js"></script>
-<!-- TinyMCE -->
-<script type="text/javascript" src="https://nextplay-stats.github.io/NPSPilotv3/global_plugins/tinymce/5.8.2/tinymce.min.js"></script>
-<script type="text/javascript">
-	sessionUser = 'C230186';
-	lastActivity = '20250822 15:19';
-</script>				<!-- Begin Page Content -->
-				<div class="container-fluid">
-					<nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="https://nextplay-stats.github.io/NPSPilotv3/"><i class="fas fa-home"></i>&nbsp;Home</a></li><li class="breadcrumb-item"><a href="https://nextplay-stats.github.io/NPSPilotv3/reports"><i class="fas fa-chart-area"></i>&nbsp;Reports</a></li><li class="breadcrumb-item active"><i class="fas fa-tools"></i>&nbsp;Manage Reports</li></ol></nav><div class="card"><div class="card-body"><a href="#" class="btn btn-primary" onclick="modalforms.formAddReport(event);"><i class="fas fa-plus-circle"></i>&nbsp;Add Report</a>&nbsp;<button type="button" class="btn btn-primary ml-1" onclick="modalforms.btnCopy_click(event, this);"><i class="fas fa-file-export"></i>&nbsp;Copy to External</button><div class="gap gap-sm"></div><div class="bootstrap-table bootstrap5">
-      <div class="fixed-table-toolbar"><div class="columns columns-right btn-group float-right"><div class="keep-open btn-group">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-label="Columns" title="Columns">
-            <i class="bi bi-list-ul"></i>
-            
-            <span class="caret"></span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end"><label class="dropdown-item dropdown-item-marker"><input type="checkbox" class="toggle-all" checked="checked"> <span>Toggle all</span></label><div class="dropdown-divider"></div><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="uniqueID" value="0" checked="checked"> <span>ID</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="type" value="1" checked="checked"> <span>Type</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="desc" value="2" checked="checked"> <span>Description</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="appGroupID" value="3" checked="checked"> <span>App Group ID</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="reportID" value="4" checked="checked"> <span>Report ID</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="icon" value="5" checked="checked"> <span>Icon</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="class" value="6" checked="checked"> <span>Class</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="accessMode" value="7" checked="checked"> <span>Access Mode</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="status" value="8" checked="checked"> <span>Status</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="tags" value="9" checked="checked"> <span>Tags</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="category" value="10" checked="checked"> <span>Category</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="owner" value="11" checked="checked"> <span>Owner</span></label></div></div></div>
-        <div class="float-right search btn-group">
-          <input class="form-control
-        
-        search-input" type="search" aria-label="Search" placeholder="Search" autocomplete="off">
-        </div>
-      </div>
-      
-      <div class="fixed-table-container" style="padding-bottom: 0px;">
-      <div class="fixed-table-header" style="display: none;"><table></table></div>
-      <div class="fixed-table-body">
-      <div class="fixed-table-loading table table-bordered table-hover" style="top: 90.6875px;">
-      <span class="loading-wrap">
-      <span class="loading-text">Loading, please wait</span>
-      <span class="animation-wrap"><span class="animation-dot"></span></span>
-      </span>
-    
-      </div>
-      <table class="table table-responsiveX table-bordered table-hover" id="manageReports" data-toggle="bootstrap-table" data-pagination="true" data-filter-control="true"><thead class="thead-light"><tr><th style="" data-field="uniqueID"><div class="th-inner sortable both">ID</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-uniqueID search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="type"><div class="th-inner sortable both">Type</div><div class="fht-cell"><div class="filter-control"><select class="form-select bootstrap-table-filter-control-type " style="width: 100%;" dir="ltr"><option value=""></option><option value="report">report</option></select></div></div></th><th style="" data-field="desc"><div class="th-inner sortable both">Description</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-desc search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="appGroupID"><div class="th-inner sortable both">App Group ID</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-appGroupID search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="reportID"><div class="th-inner sortable both">Report ID</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-reportID search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="icon"><div class="th-inner ">Icon</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-icon search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="class"><div class="th-inner sortable both">Class</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-class search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="accessMode"><div class="th-inner sortable both">Access Mode</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-accessMode search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="status"><div class="th-inner sortable both">Status</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-status search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="tags"><div class="th-inner sortable both">Tags</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-tags search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th style="" data-field="category"><div class="th-inner sortable both">Category</div><div class="fht-cell"><div class="filter-control"><select class="form-select bootstrap-table-filter-control-category " style="width: 100%;" dir="ltr"><option value=""></option><option value="Organisational">Organisational</option><option value="Any Categories">Any Categories</option><option value="BFS">BFS</option><option value="CFS">CFS</option><option value="OPS">OPS</option></select></div></div></th><th style="" data-field="owner"><div class="th-inner sortable both">Owner</div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-owner search-input" style="width: 100%;" placeholder="" value=""></div></div></th></tr></thead><tbody><tr data-index="0"><td>10</td><td>report</td><td>Home Fire Safety Visit Report<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'10');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'10');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="10"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>15d41b90-aecf-4d1a-b478-cbd39418545b</td><td><i class="fas fa-home h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>Home Safety Check, Fire Safety Visit, HSC, Target Address List, Prevention, HSC3, Partnership, CFS</td><td>Organisational</td><td>Steven Kay</td></tr><tr data-index="1"><td>12</td><td>report</td><td>Station Level Reports<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'12');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'12');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="12"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>c8d30e88-cd71-41ab-ad00-acc1e58a36d2</td><td><i class="fas fa-chart-bar h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>OPS</td><td>Any Categories</td><td>Steven Kay</td></tr><tr data-index="2"><td>14</td><td>report</td><td>High Risk Co-ordinator Report<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'14');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'14');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="14"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>b9516368-6c19-4f43-abf6-816ee69aff83</td><td><i class="fas fa-exclamation-triangle h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-danger"><i class="fas fa-lock h5"></i>&nbsp;Restricted</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>CFS</td><td>Any Categories</td><td>Steven Kay</td></tr><tr data-index="3"><td>15</td><td>report</td><td>Gazetteer<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'15');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'15');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="15"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>258a92d6-bd92-4620-8248-2cb433528fb0</td><td><i class="fas fa-map h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>Support</td><td>Any Categories</td><td>Steven Kay</td></tr><tr data-index="4"><td>17</td><td>report</td><td>SSRI Overview Report (Crews)<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'17');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'17');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="17"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>2fb682a3-87b3-4c6c-9e77-2a3008941aa2</td><td><i class="fas fa-search h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>OPS</td><td>Any Categories</td><td>Steven Kay</td></tr><tr data-index="5"><td>32</td><td>report</td><td>Quarterly Performance<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'32');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'32');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="32"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>85013e19-f211-4b79-b2ed-c279c39c7be3</td><td><i class="fas fa-chart-line h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>Support -</td><td>Any Categories</td><td></td></tr><tr data-index="6"><td>33</td><td>report</td><td>Bonfire Stats<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'33');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'33');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="33"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>c4376a74-721b-4a98-8453-d127601ec6d7</td><td><i class="fas fa-burn h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>OPS</td><td>Any Categories</td><td></td></tr><tr data-index="7"><td>46</td><td>report</td><td>Ops Intel Management<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'46');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'46');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="46"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>35105d8c-6d25-4a7b-8bbe-f508635edcf0</td><td><i class="fas fa-radiation h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-danger"><i class="fas fa-lock h5"></i>&nbsp;Restricted</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>OPS</td><td>Any Categories</td><td>Gavin Drury</td></tr><tr data-index="8"><td>47</td><td>report</td><td>Incidents Attended<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'47');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'47');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="47"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>6150f229-d650-4915-af37-007d43351df1</td><td><i class="fas fa-fire-extinguisher h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>OPS</td><td>Any Categories</td><td></td></tr><tr data-index="9"><td>50</td><td>report</td><td>Response Standards Report<br><form class="form-inline" action="/NPSPilotv3/permissions/reportAccess" method="POST">	<button type="button" class="btn btn-sm btn-primary mr-1" onclick="modalforms.formModifyReport(event,'50');"><i class="fas fa-pencil-alt"></i>&nbsp;Modify</button>	<button type="button" class="btn btn-sm btn-danger mr-1" onclick="modalforms.deleteReport(event,'50');"><i class="fas fa-times"></i>&nbsp;Delete</button>	<button type="submit" class="btn btn-sm btn-info" name="rID" value="50"><i class="fas fa-key"></i>&nbsp;Permissions</button></form></td><td>29ca073f-f514-4245-b447-de8ec1c15df2</td><td>c51270a5-3fd4-4efd-99c7-7c4ee009cdb8</td><td><i class="fas fa-stopwatch h5"></i></td><td class="text-primary"><i class="fas fa-circle"></i>&nbsp;primary</td><td class="text-success"><i class="fas fa-lock-open h5"></i>&nbsp;Open</td><td><div class="status-live"><i class="fas fa-book-reader"></i>&nbsp;Live</div></td><td>Ops, Support</td><td>Any Categories</td><td></td></tr></tbody></table></div>
-      <div class="fixed-table-footer"></div>
-      </div>
-      <div class="fixed-table-pagination" style=""><div class="float-left pagination-detail"><span class="pagination-info">
-      Showing 1 to 10 of 48 rows
-      </span><div class="page-list"><div class="btn-group dropdown dropup">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        <span class="page-size">
-        10
-        </span>
-        <span class="caret"></span>
-        </button>
-        <div class="dropdown-menu"><a class="dropdown-item active" href="#">10</a><a class="dropdown-item " href="#">25</a><a class="dropdown-item " href="#">50</a></div></div> rows per page</div></div><div class="float-right pagination"><ul class="pagination"><li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li><li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li><li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li><li class="page-item"><a class="page-link" aria-label="to page 3" href="javascript:void(0)">3</a></li><li class="page-item"><a class="page-link" aria-label="to page 4" href="javascript:void(0)">4</a></li><li class="page-item"><a class="page-link" aria-label="to page 5" href="javascript:void(0)">5</a></li><li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li></ul></div></div>
-      </div><div class="clearfix"></div></div></div>				</div>
-				<!-- /.container-fluid -->
-			</div>
-			<!-- End of Main Content -->
-			<!-- Footer -->
-<footer class="sticky-footer">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-        NPS v1.1.1.3<br />
-        <span>Copyright &copy; NextPlay Stats </span>
-        </div>
+  <div class="form-group row">
+    <label for="cboType" class="col-sm-2 col-form-label">Type</label>
+    <div class="col-sm">
+      <select name="rType" id="cboType" class="form-select">
+        <option value="report" {{ rType === 'report' ? 'selected' : '' }}>Report</option>
+        <option value="dashboard" {{ rType === 'dashboard' ? 'selected' : '' }}>Dashboard</option>
+      </select>
     </div>
-</footer>
-<!-- End of Footer -->
-		</div>
-		<!-- End of Content Wrapper -->
-	</div>
-	<!-- End of Page Wrapper -->
+  </div>
 
-	
-<div id="modal_formModifyReport" class="modal fade show" role="dialog" style="display: block;" aria-modal="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Modify Report</h4></div><div class="modal-body">
-			<form id="formModifyReport">
-				<input type="hidden" name="rID" value="10">
-				<div class="form-group row">
-					<label for="cboType" class="col-sm-2 col-form-label">Type</label>
-					<div class="col-sm">
-						<select name="rType" id="cboType" class="form-select"><option value="report" selected="">Report</option><option value="dashboard">Dashboard</option>
-						</select>
-					</div>
-				</div>
-	
-				<div class="form-group row">
-					<label for="txtDesc" class="col-sm-2 col-form-label">Description</label>
-					<div class="col-sm">
-						<input name="rDesc" id="txtDesc" class="form-control" value="Home Fire Safety Visit Report" required="">
-					</div>
-				</div>
+  <div class="form-group row">
+    <label for="txtDesc" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm">
+      <input name="rDesc" id="txtDesc" class="form-control"
+             value="{{rDesc}}" required>
+    </div>
+  </div>
 
-				<div class="form-group row">
-					<label for="txtComments" class="col-sm-2 col-form-label">Comments</label>
-					<div class="col-sm">
-						<input name="rComments" id="txtComments" class="form-control" value="For stations to monitor &amp; assess activity regarding Home Fire Safety Visits" maxlength="500">
-					</div>
-				</div>
-	
-				<div class="form-group row">
-					<label for="txtAppGroupID" class="col-sm-2 col-form-label">App Group ID</label>
-					<div class="col-sm">
-						<input name="rAppGroupID" id="txtAppGroupID" class="form-control" value="29ca073f-f514-4245-b447-de8ec1c15df2" required="">
-					</div>
-				</div>
-	
-				<div class="form-group row">
-					<label for="txtReportID" class="col-sm-2 col-form-label">Report ID</label>
-					<div class="col-sm">
-						<input name="rReportID" id="txtReportID" class="form-control" value="15d41b90-aecf-4d1a-b478-cbd39418545b">
-					</div>
-				</div>
-	
-				<div class="form-group row">
-					<label for="txtIcon" class="col-sm-2 col-form-label">Icon</label>
-					<div class="col-sm">
-						<input name="rIcon" id="txtIcon" class="form-control" value="home">
-					</div>
-				</div>
-	
-				<div class="form-group row">
-					<label for="cboClass" class="col-sm-2 col-form-label">Class</label>
-					<div class="col-sm">
-						<select name="rClass" id="cboClass" class="form-select"><option value="primary" selected="">Primary</option><option value="info">Info</option>
-						</select>
-					</div>
-				</div>
-	
-				<div class="form-group row">
-					<label for="cboAccessMode" class="col-sm-2 col-form-label">Access Mode&nbsp;<i class="fas fa-info-circle" data-html="true" data-toggle="tooltip" aria-label="&lt;ul&gt;&lt;li&gt;Open - Visible to all in RMS.&lt;/li&gt;&lt;li&gt;Restricted - Visible to specific people RMS&lt;/li&gt;&lt;/ul&gt;" data-bs-original-title="&lt;ul&gt;&lt;li&gt;Open - Visible to all in RMS.&lt;/li&gt;&lt;li&gt;Restricted - Visible to specific people RMS&lt;/li&gt;&lt;/ul&gt;"></i></label>
-					<div class="col-sm">
-						<select name="rAccessMode" id="cboAccessMode" class="form-select"><option value="0" selected="">Open</option><option value="1">Restricted</option>
-						</select>
-					</div>
-				</div>
-	
-				<div class="form-group row">
-					<label for="cboStatus" class="col-sm-2 col-form-label">Status&nbsp;<i class="fas fa-info-circle" data-html="true" data-toggle="tooltip" aria-label="&lt;ul&gt;&lt;li&gt;Draft - Visible to owner and report admins.&lt;/li&gt;&lt;li&gt;Live - Visible to all with permission.&lt;/li&gt;&lt;li&gt;Unavailable - Hidden from view page.&lt;/li&gt;&lt;/ul&gt;" data-bs-original-title="&lt;ul&gt;&lt;li&gt;Draft - Visible to owner and report admins.&lt;/li&gt;&lt;li&gt;Live - Visible to all with permission.&lt;/li&gt;&lt;li&gt;Unavailable - Hidden from view page.&lt;/li&gt;&lt;/ul&gt;"></i></label>
-					<div class="col-sm">
-						<select name="rStatus" id="cboStatus" class="form-select"><option value="0">Draft</option><option value="1" selected="">Live</option><option value="2">Unavailable</option>
-						</select>
-					</div>
-				</div>
+  <div class="form-group row">
+    <label for="txtComments" class="col-sm-2 col-form-label">Comments</label>
+    <div class="col-sm">
+      <input name="rComments" id="txtComments" class="form-control"
+             value="{{rComments}}" maxlength="500">
+    </div>
+  </div>
 
-				<div class="form-group row">
-					<label for="txtTags" class="col-sm-2 col-form-label">Tags</label>
-					<div class="col-sm">
-						<input name="rTags" id="txtTags" class="form-control" value="Home Safety Check, Fire Safety Visit, HSC, Target Address List, Prevention, HSC3, Partnership, CFS">
-					</div>
-				</div>
+  <div class="form-group row">
+    <label for="txtAppGroupID" class="col-sm-2 col-form-label">App Group ID</label>
+    <div class="col-sm">
+      <input name="rAppGroupID" id="txtAppGroupID" class="form-control"
+             value="{{rAppGroupID}}" required>
+    </div>
+  </div>
 
-				<div class="form-group row">
-					<label for="cboCategory" class="col-sm-2 col-form-label">Category</label>
-					<div class="col-sm">
-						<select name="rCategory" id="cboCategory" class="form-select" required=""><option value="Any Categories">Any Categories</option><option value="CFS">CFS</option><option value="BFS">BFS</option><option value="OPS">OPS</option><option value="SGPBRT">SGPBRT</option><option value="Organisational" selected="">Organisational</option>
-						</select>
-					</div>
-				</div>
+  <div class="form-group row">
+    <label for="txtReportID" class="col-sm-2 col-form-label">Report ID</label>
+    <div class="col-sm">
+      <input name="rReportID" id="txtReportID" class="form-control"
+             value="{{rReportID}}">
+    </div>
+  </div>
 
-				<div class="form-group row">
-					<label for="cboGroups" class="col-sm-2 col-form-label">Display Groups</label>
-					<div class="col-sm">
-						<select name="rGroups[]" id="cboGroups" class="form-select" data-allow-clear="true" multiple="" style="position: absolute; left: -9999px;">
-							<option disabled="" hidden="" value="">Choose report groups...</option><option value="1">Protection </option><option value="2" selected="selected">Prevention</option><option value="3">People </option><option value="4">Response</option><option value="5">Corporate</option>
-						</select><div class="form-control dropdown"><div><span class="badge me-2 bg-primary mw-100" data-value="2"><button type="button" style="font-size:0.65em" class="me-2 float-start btn-close btn-close-white" aria-label="Clear"></button>Prevention</span><input type="text" autocomplete="off" spellcheck="false" aria-label="Type a value" placeholder="" size="1" style="background-color: transparent; border: 0px; outline: 0px; max-width: 100%; min-width: 8px;"></div><ul class="dropdown-menu p-0" style="max-height: 280px; max-width: 360px; overflow-y: auto;"><li><a class="dropdown-item text-truncate" data-value="1" href="#">Protection </a></li><li><a class="dropdown-item text-truncate" data-value="2" href="#">Prevention</a></li><li><a class="dropdown-item text-truncate" data-value="3" href="#">People </a></li><li><a class="dropdown-item text-truncate" data-value="4" href="#">Response</a></li><li><a class="dropdown-item text-truncate" data-value="5" href="#">Corporate</a></li></ul></div>
-					</div>
-				</div>
-				<br>
+  <div class="form-group row">
+    <label for="txtIcon" class="col-sm-2 col-form-label">Icon</label>
+    <div class="col-sm">
+      <input name="rIcon" id="txtIcon" class="form-control"
+             value="{{rIcon}}">
+    </div>
+  </div>
 
-			</form>
-			   </form>
+  <div class="form-group row">
+    <label for="cboClass" class="col-sm-2 col-form-label">Class</label>
+    <div class="col-sm">
+      <select name="rClass" id="cboClass" class="form-select">
+        <option value="primary" {{ rClass === 'primary' ? 'selected' : '' }}>Primary</option>
+        <option value="info"    {{ rClass === 'info'    ? 'selected' : '' }}>Info</option>
+      </select>
+    </div>
+  </div>
 
--  <a href="#"
--     class="btn btn-primary"
--     onclick="return validateForm(
--       event,
--       'formModifyReport',
--       function() { modalforms.saveModifyReport(event); }
--     );">
--    <i class="fas fa-save"></i>&nbsp;Save
--  </a>
-+  <button type="button"
-+          class="btn btn-primary"
-+          onclick="modalforms.saveModifyReport(event)">
-+    <i class="fas fa-save"></i>&nbsp;Save
-+  </button>
+  <div class="form-group row">
+    <label for="cboAccessMode" class="col-sm-2 col-form-label">
+      Access Mode
+    </label>
+    <div class="col-sm">
+      <select name="rAccessMode" id="cboAccessMode" class="form-select">
+        <option value="0" {{ rAccessMode === 0 ? 'selected' : '' }}>Open</option>
+        <option value="1" {{ rAccessMode === 1 ? 'selected' : '' }}>Restricted</option>
+      </select>
+    </div>
+  </div>
 
-   <a href="#"
-      class="btn btn-secondary"
--     onclick="return removeModal('#modal_formModifyReport');">
-+     onclick="event.preventDefault(); removeModal('#modal_formModifyReport');">
-     Cancel
-   </a>
+  <div class="form-group row">
+    <label for="cboStatus" class="col-sm-2 col-form-label">
+      Status
+    </label>
+    <div class="col-sm">
+      <select name="rStatus" id="cboStatus" class="form-select">
+        <option value="0" {{ rStatus === 0 ? 'selected' : '' }}>Draft</option>
+        <option value="1" {{ rStatus === 1 ? 'selected' : '' }}>Live</option>
+        <option value="2" {{ rStatus === 2 ? 'selected' : '' }}>Unavailable</option>
+      </select>
+    </div>
+  </div>
 
-</body></html>
+  <div class="form-group row">
+    <label for="txtTags" class="col-sm-2 col-form-label">Tags</label>
+    <div class="col-sm">
+      <input name="rTags" id="txtTags" class="form-control"
+             value="{{rTags}}">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="cboCategory" class="col-sm-2 col-form-label">Category</label>
+    <div class="col-sm">
+      <select name="rCategory" id="cboCategory" class="form-select" required>
+        <option value="Any Categories" {{ rCategory === 'Any Categories' ? 'selected' : '' }}>Any Categories</option>
+        <option value="CFS"             {{ rCategory === 'CFS'             ? 'selected' : '' }}>CFS</option>
+        <option value="BFS"             {{ rCategory === 'BFS'             ? 'selected' : '' }}>BFS</option>
+        <option value="OPS"             {{ rCategory === 'OPS'             ? 'selected' : '' }}>OPS</option>
+        <option value="SGPBRT"          {{ rCategory === 'SGPBRT'          ? 'selected' : '' }}>SGPBRT</option>
+        <option value="Organisational"  {{ rCategory === 'Organisational'  ? 'selected' : '' }}>Organisational</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="cboGroups" class="col-sm-2 col-form-label">Display Groups</label>
+    <div class="col-sm">
+      <select name="rGroups[]" id="cboGroups" class="form-select" data-allow-clear="true" multiple>
+        <!-- loop through your groups server‐side and mark selected as needed -->
+        <option value="1" {{ rGroups.includes(1) ? 'selected' : '' }}>Protection</option>
+        <option value="2" {{ rGroups.includes(2) ? 'selected' : '' }}>Prevention</option>
+        <option value="3" {{ rGroups.includes(3) ? 'selected' : '' }}>People</option>
+        <option value="4" {{ rGroups.includes(4) ? 'selected' : '' }}>Response</option>
+        <option value="5" {{ rGroups.includes(5) ? 'selected' : '' }}>Corporate</option>
+      </select>
+    </div>
+  </div>
+</form>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary"
+          onclick="modalforms.saveModifyReport(event)">
+    <i class="fas fa-save"></i>&nbsp;Save
+  </button>
+  <button type="button" class="btn btn-secondary"
+          onclick="removeModal('#modal_formModifyReport')">
+    Cancel
+  </button>
+</div>
