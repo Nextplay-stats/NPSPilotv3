@@ -125,35 +125,44 @@ var modalforms = {
   });
   },
 
-  saveModifyReport: async function(e) {
-    if (e) e.preventDefault();
-    form_disable_save();
+   saveModifyReport: async function(e) {
+   if (e) e.preventDefault();
+   form_disable_save();
 
-    // gather form data
-    const formEl = document.getElementById('formModifyReport');
-    const payload = Object.fromEntries(new FormData(formEl).entries());
+   // gather form data
+   const formEl = document.getElementById('formModifyReport');
+   const payload = Object.fromEntries(new FormData(formEl).entries());
 
-    try {
-      const res = await fetch(FUNC_API.modify, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+   try {
+-    const res = await fetch(FUNC_API.modify, {
++    const res = await fetch(
++      'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net/api/ModifyReport?code=<MODIFY_FUNCTION_KEY>',
++      {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(payload)
+       }
+     );
 
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.message || res.statusText);
-      }
+     if (!res.ok) {
+       const err = await res.json();
+       throw new Error(err.message || res.statusText);
+     }
 
-      window.location.href = '/reports/manageReports/';
-    }
-    catch (err) {
-      console.error('saveModifyReport error:', err);
-      $('.saveReturn')
-        .show()
-        .html(`<i class="fas fa-times text-danger"></i>&nbsp;Update failed: ${err.message}`);
-    }
-  },
+-    window.location.href = '/reports/manageReports/';
++    window.location.href = '/NPSPilotv3/reports/manageReports/';
+
+   } catch (err) {
+     console.error('saveModifyReport error:', err);
+     $('.saveReturn')
+       .show()
+       .html(
+         `<i class="fas fa-times text-danger"></i>&nbsp;Update failed: ${
+           err.message
+         }`
+       );
+   }
+ },
 
   btnCopy_click: function(evt, sender) {
     var confirmed = false;
