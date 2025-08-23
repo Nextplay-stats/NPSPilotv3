@@ -1,8 +1,8 @@
 // Replace <ADD_KEY>, <MODIFY_KEY>, and <DELETE_KEY> with your function keys
 const FUNC_HOST = 'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net';
 const FUNC_API = {
-  add:    `${FUNC_HOST}/api/AddReport?code=<ADD_KEY>`,
-  modify: `${FUNC_HOST}/api/ModifyReport?code=<MODIFY_KEY>`,
+  add:    `${FUNC_HOST}/api/AddReport?code=ugiVcp0NhP-PH1Q3kFGDhPdMjBUkRTq4XgxfwN8AW5DdAzFuS7GgMw==`,
+  modify: `${FUNC_HOST}/api/ModifyReport?code=pzWA7THnAQXTtv5o36iYa5_oo-woDEtksUbuHEQxujIvAzFu9oYVpg==`,
   delete: `${FUNC_HOST}/api/DeleteReport?code=<DELETE_KEY>`
 };
 
