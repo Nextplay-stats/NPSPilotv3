@@ -32,35 +32,36 @@ var modalforms = {
   },
 
   saveAddReport: async function(e) {
-    if (e) e.preventDefault();
-    form_disable_save();
+  if (e) e.preventDefault();
+  form_disable_save();
 
-    // gather form data
-    const formEl = document.getElementById('formAddReport');
-    const payload = Object.fromEntries(new FormData(formEl).entries());
+  // collect the form
+  const formEl = document.getElementById('formAddReport');
+  const payload = Object.fromEntries(new FormData(formEl).entries());
 
-    try {
-      const res = await fetch(FUNC_API.add, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+  try {
+    // ← POST to YOUR Azure Function, not to /reports on GitHub
+    const res = await fetch(FUNC_API.add, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload)
+    });
 
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.message || res.statusText);
-      }
-
-      // on success, redirect back to manageReports
-      window.location.href = '/reports/manageReports/';
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || res.statusText);
     }
-    catch (err) {
-      console.error('saveAddReport error:', err);
-      $('.saveReturn')
-        .show()
-        .html(`<i class="fas fa-times text-danger"></i>&nbsp;Update failed: ${err.message}`);
-    }
-  },
+
+    // success → go back to your manage page
+    window.location.href = '/NPSPilotv3/reports/manageReports';
+  }
+  catch (err) {
+    console.error('saveAddReport error:', err);
+    document.querySelector('.saveReturn')
+      .innerHTML = `<i class="fas fa-times text-danger"></i>&nbsp;Update failed: ${err.message}`;
+    document.querySelector('.saveReturn').style.display = 'block';
+  }
+},
 
   deleteReport: function(e, id) {
     e.preventDefault();
