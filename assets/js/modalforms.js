@@ -42,7 +42,7 @@ var modalforms = {
    try {
 -    const res = await fetch(FUNC_API.add, {
 +    const res = await fetch(
-+      'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net/api/AddReport?code=<ADDREPORT_FUNCTION_KEY>',
++      'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net/api/AddReport?code=ugiVcp0NhP-PH1Q3kFGDhPdMjBUkRTq4XgxfwN8AW5DdAzFuS7GgMw==',
 +      {
          method:  'POST',
          headers: { 'Content-Type': 'application/json' },
@@ -142,7 +142,7 @@ var modalforms = {
    try {
 -    const res = await fetch(FUNC_API.modify, {
 +    const res = await fetch(
-+      'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net/api/ModifyReport?code=<MODIFY_FUNCTION_KEY>',
++      'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net/api/ModifyReport?code=pzWA7THnAQXTtv5o36iYa5_oo-woDEtksUbuHEQxujIvAzFu9oYVpg==',
 +      {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
