@@ -20,7 +20,7 @@ var modalforms = {
     load_target($(modal).find('.modal-body'));
 
     // load your HTML form fragment (unchanged)
-    ajaxCall('NPSPilotv3','reports', 'formAddReport', dataObj, function(output) {
+    ajaxCall('NPSPilotv3','reports','formAddReport', dataObj, function(output) {
       $(modal).find('.modal-body').html(output);
       load_target_off();
       Tags.init('#cboGroups');
