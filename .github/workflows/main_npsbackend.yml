@@ -1,73 +1,77 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js project to Azure Function App - NPSBackend
+ name: Build and deploy Node.js project to Azure Function App - NPSBackend
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+ on:
+   push:
+     branches:
+       - main
+   workflow_dispatch:
 
-env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '22.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+ env:
+-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # currently pointing at repo root
++  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.nps-backend' # <-- change this to your Functions folder
+   NODE_VERSION: '22.x'
 
-jobs:
-  build:
-    runs-on: windows-latest
-    permissions:
-      contents: read #This is required for actions/checkout
-      
-    steps:
-      - name: 'Checkout GitHub Action'
-        uses: actions/checkout@v4
+ jobs:
+   build:
+     runs-on: windows-latest
+     permissions:
+       contents: read
 
-      - name: Setup Node ${{ env.NODE_VERSION }} Environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+     steps:
+       - name: 'Checkout GitHub Action'
+         uses: actions/checkout@v4
 
-      - name: 'Resolve Project Dependencies Using Npm'
-        shell: pwsh
-        run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-          popd
+       - name: Setup Node ${{ env.NODE_VERSION }} Environment
+         uses: actions/setup-node@v3
+         with:
+           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
-        with:
-          name: node-app
-          path: .
+       - name: 'Resolve Project Dependencies Using Npm'
+         shell: pwsh
+         run: |
+-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
++          pushd './.nps-backend'
+           npm install
+           npm run build --if-present
+           npm run test --if-present
+           popd
 
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+       - name: Upload artifact for deployment job
+         uses: actions/upload-artifact@v4
+         with:
+           name: node-app
+-          path: .
++          path: .  # still upload the entire repo; deploy action will pick .nps-backend
 
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: node-app
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_08F81B57B9084524B89A69DBF6C2F1A7 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B971D31C86B542AC8057AA643C7F8EBF }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D3A8945A9E0F44649C092EDFE3868C81 }}
+   deploy:
+     runs-on: windows-latest
+     needs: build
+     permissions:
+       id-token: write
+       contents: read
 
-      - name: 'Run Azure Functions Action'
-        uses: Azure/functions-action@v1
-        id: fa
-        with:
-          app-name: 'NPSBackend'
-          slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+     steps:
+       - name: Download artifact from build job
+         uses: actions/download-artifact@v4
+         with:
+           name: node-app
+
+       - name: Login to Azure
+         uses: azure/login@v2
+         with:
+           client-id:   ${{ secrets.AZUREAPPSERVICE_CLIENTID_… }}
+           tenant-id:   ${{ secrets.AZUREAPPSERVICE_TENANTID_… }}
+           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_… }}
+
+       - name: 'Run Azure Functions Action'
+         uses: Azure/functions-action@v1
+         id: fa
+         with:
+           app-name: 'NPSBackend'
+           slot-name: 'Production'
+-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
++          package: '.nps-backend'   # <-- make sure this matches above
           
