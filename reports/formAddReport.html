@@ -93,4 +93,19 @@
 				<br>
 
 			</form>
-			<a href="#" class="btn btn-primary" onclick="return validateForm(event,'formAddReport',function() { modalforms.saveAddReport(event); });"><i class="fas fa-save"></i>&nbsp;Save</a>&nbsp;<a href="#" class="btn btn-secondary" onclick="event.preventDefault(); removeModal('#modal_formAddReport');">Cancel</a></body></html>
+			<a href="#"
+-   class="btn btn-primary"
+-   onclick="return validateForm(
+-     event,
+-     'formAddReport',
+-     function() { modalforms.saveAddReport(event); }
+-   );">
+-  <i class="fas fa-save"></i>&nbsp;Save
+-</a>
++<button
++  type="button"
++  class="btn btn-primary"
++  onclick="modalforms.saveAddReport(event)">
++  <i class="fas fa-save"></i>&nbsp;Save
++</button>
+</body></html>
