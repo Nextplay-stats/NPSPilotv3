@@ -20,7 +20,7 @@ var modalforms = {
     load_target($(modal).find('.modal-body'));
 
     // load your HTML form fragment (unchanged)
-    ajaxCall('reports', 'formAddReport', dataObj, function(output) {
+    ajaxCall('NPSPilotv3','reports', 'formAddReport', dataObj, function(output) {
       $(modal).find('.modal-body').html(output);
       load_target_off();
       Tags.init('#cboGroups');
@@ -109,7 +109,7 @@ var modalforms = {
     load_target($(modal).find('.modal-body'));
 
     // load your HTML form fragment (unchanged)
-    ajaxCall('reports', 'formModifyReport', dataObj, function(output) {
+    ajaxCall('NPSPilotv3','reports', 'formModifyReport', dataObj, function(output) {
       $(modal).find('.modal-body').html(output);
       Tags.init('#cboGroups');
       load_target_off();
