@@ -32,23 +32,38 @@ var modalforms = {
   },
 
    saveAddReport: async function(e) {
-   if (e) e.preventDefault();
-   form_disable_save();
+  if (e) e.preventDefault();
+  form_disable_save();
 
-   // collect the form
-   const formEl = document.getElementById('formAddReport');
-   const payload = Object.fromEntries(new FormData(formEl).entries());
+  // collect the form
+  const formEl = document.getElementById('formAddReport');
+  const payload = Object.fromEntries(new FormData(formEl).entries());
 
-   try {
--    const res = await fetch(FUNC_API.add, {
-+    const res = await fetch(
-+      'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net/api/AddReport?code=ugiVcp0NhP-PH1Q3kFGDhPdMjBUkRTq4XgxfwN8AW5DdAzFuS7GgMw==',
-+      {
-         method:  'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body:    JSON.stringify(payload)
-       }
-     );
+  try {
+    const res = await fetch(
+      'https://npsbackend-adg7dug3anash7hm.uksouth-01.azurewebsites.net/api/AddReport?code=ugiVcp0NhP-PH1Q3kFGDhPdMjBUkRTq4XgxfwN8AW5DdAzFuS7GgMw==',
+      {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload)
+      }
+    );
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || res.statusText);
+    }
+
+    // on success, stay under /NPSPilotv3
+    window.location.href = '/NPSPilotv3/reports/manageReports/';
+  }
+  catch (err) {
+    console.error('saveAddReport error:', err);
+    const el = document.querySelector('.saveReturn');
+    el.innerHTML = `<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ${err.message}`;
+    el.style.display = 'block';
+  }
+},
 
      if (!res.ok) {
        const err = await res.json();
