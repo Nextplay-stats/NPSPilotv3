@@ -18,8 +18,10 @@ jobs:
         with:
           node-version: '18'        # or whatever major you prefer
           cache: 'npm'
+          cache-dependency-path: 'functions/package-lock.json'
 
       - name: Install function dependencies
         working-directory: functions
         run: |
           npm install
+
