@@ -1,11 +1,9 @@
 [build]
-  # Where your static site lives (adjust if you use a 'public' or 'dist' folder)
+  # your static site’s publish folder (e.g. "public", "dist", or "." if you have no build step)
   publish   = "public"    
-  
-  # Where your Netlify Functions live
+  # point Netlify to your functions dir
   functions = "functions"
 
-# (Optional) local dev settings for `netlify dev`
 [dev]
-  functions = "functions"
+  functions = "functions"  # for `netlify dev`
   port      = 8888
