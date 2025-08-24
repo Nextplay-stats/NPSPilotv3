@@ -1,8 +1,12 @@
 [build]
-  publish   = "public"              # or "." / your actual publish folder
+  # where your site’s static files live (adjust “.”, “public” or “dist” as needed)
+  publish   = "."
+  # where your Netlify Functions live
   functions = "functions"
-  # first install root deps (no-op), then install function deps 
+  # 1 run your dummy root build
+  # 2 then install the functions folder’s dependencies
   command   = "npm run build && npm install --prefix functions"
+
 
 [dev]
   functions = "functions"  # for `netlify dev`
