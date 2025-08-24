@@ -1,0 +1,25 @@
+name: Install Netlify Function Dependencies
+
+on:
+  push:
+    paths:
+      - 'functions/**'
+
+jobs:
+  install-deps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'        # or whatever major you prefer
+          cache: 'npm'
+
+      - name: Install function dependencies
+        working-directory: functions
+        run: |
+          npm install
