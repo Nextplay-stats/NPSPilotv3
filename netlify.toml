@@ -1,0 +1,11 @@
+[build]
+  # Where your static site lives (adjust if you use a 'public' or 'dist' folder)
+  publish   = "public"    
+  
+  # Where your Netlify Functions live
+  functions = "functions"
+
+# (Optional) local dev settings for `netlify dev`
+[dev]
+  functions = "functions"
+  port      = 8888
