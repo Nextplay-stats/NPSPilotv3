@@ -1,48 +1,72 @@
 // assets/js/modalforms.js
 
 // Base path for Netlify Functions
+// assets/js/modalforms.js
+
+// Base path for Netlify Functions
 const API = '/.netlify/functions';
 
 var modalforms = {
 
-   // 1) Show Add Report modal
   // 1) Show Add Report modal
-formAddReport: function (e) {
-  e.preventDefault();
+  formAddReport: function (e) {
+    e.preventDefault();
 
-  // Remove any existing Add Report modal
-  $('#modal_formAddReport').remove();
+    // Remove any existing Add Report modal
+    $('#modal_formAddReport').remove();
 
-  // Create the Bootstrap modal wrapper (must live here, inside the function)
-  // Create a new modal element and wrap it in jQuery
-const $modal = $(create_modal_content({
-  id:      'modal_formAddReport',
-  title:   'Add Report',
-  classes: 'modal-lg'
-}));
+    // Build and inject the Bootstrap modal wrapper
+    const $modal = $(create_modal_content({
+      id:      'modal_formAddReport',
+      title:   'Add Report',
+      classes: 'modal-lg'
+    }));
+    $('#modal-container').append($modal);
 
-// Append the modal to our placeholder container
-$('#modal-container').append($modal);
+    // Show spinner
+    load_target($modal.find('.modal-body'));
 
-// Show a loading spinner in the modal body
-load_target($modal.find('.modal-body'));
+    // Fetch the form partial (next to manageReports.html under /reports)
+    $.get('formAddReport.html')
+      .done(function (html) {
+        $modal.find('.modal-body').html(html);
+        load_target_off();
+        Tags.init('#cboGroups');
+        // Finally show it
+        new bootstrap.Modal($modal.get(0)).show();
+      })
+      .fail(function (_, __, err) {
+        load_target_off();
+        console.error('Failed to load AddReport form:', err);
+      });
+  },  // ← make sure this comma is here
 
-// Fetch the empty form reports and inject it
-$.get('/formAddReport.html')
-  .done(html => {
-   $modal.find('.modal-body').html(html);
-   load_target_off();
-   Tags.init('#cboGroups');
+  // 2) Submit Add Report
+  saveAddReport: function (e) {
+    e.preventDefault();
+    form_disable_save();
 
-   const modalEl = $modal.get(0);
-   new bootstrap.Modal(modalEl).show();
- })
- .fail((_, __, err) => {
-   load_target_off();
-   console.error('Failed to load AddReport form:', err);
- });
+    const formData = $('#formAddReport').serialize();
+    $.ajax({
+      url:    `${API}/addReport`,
+      method: 'POST',
+      data:   formData,
+      success: function () {
+        removeModal('#modal_formAddReport');
+        $('#manageReports').bootstrapTable('refresh');
+      },
+      error: function (xhr) {
+        console.error('Add Report failed', xhr);
+        $('.saveReturn')
+          .html('<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ' +
+                (xhr.responseText || xhr.statusText))
+          .show();
+      }
+    });
+  }
 
-},  // ← Don’t forget this comma!
+  // …any further methods also need commas between them…
+};
 
 
     // Create a new modal element and wrap it in jQuery
