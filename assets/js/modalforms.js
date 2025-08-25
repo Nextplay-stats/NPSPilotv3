@@ -1,4 +1,4 @@
-// modalforms.js
+// assets/js/modalforms.js
 
 // Base path for Netlify Functions
 const API = '/.netlify/functions';
@@ -6,28 +6,46 @@ const API = '/.netlify/functions';
 var modalforms = {
 
   // 1) Show Add Report modal
-  formAddReport(e) {
+  formAddReport: function (e) {
     e.preventDefault();
+
+    // Remove any existing Add Report modal
     $('#modal_formAddReport').remove();
 
-    const modal = create_modal_content({
+    // Create a new modal element and wrap it in jQuery
+    const $modal = $(create_modal_content({
       id:      'modal_formAddReport',
       title:   'Add Report',
       classes: 'modal-lg'
-    });
-    $('#modal-container').append(modal);
-    load_target(modal.find('.modal-body'));
+    }));
 
-    // Load empty form skeleton
-    $.get('/partials/formAddReport.html', html => {
-      modal.find('.modal-body').html(html);
-      load_target_off();
-      Tags.init('#cboGroups');
-    });
+    // Append the modal to our placeholder container
+    $('#modal-container').append($modal);
+
+    // Show a loading spinner in the modal body
+    load_target($modal.find('.modal-body'));
+
+    // Fetch the empty form partial and inject it
+    $.get('/partials/formAddReport.html')
+      .done(html => {
+        $modal.find('.modal-body').html(html);
+        load_target_off();
+        // Initialize your custom Tags plugin
+        Tags.init('#cboGroups');
+
+        // Finally, show the Bootstrap modal
+        const modalEl = $modal.get(0);
+        new bootstrap.Modal(modalEl).show();
+      })
+      .fail((_, __, err) => {
+        load_target_off();
+        console.error('Failed to load AddReport form:', err);
+      });
   },
 
+
   // 2) Submit Add Report
-  saveAddReport(e) {
+  saveAddReport: function (e) {
     e.preventDefault();
     form_disable_save();
 
@@ -49,8 +67,9 @@ var modalforms = {
     });
   },
 
+
   // 3) Delete report
-  deleteReport(e, id) {
+  deleteReport: function (e, id) {
     e.preventDefault();
 
     bootbox.confirm({
@@ -78,37 +97,57 @@ var modalforms = {
     });
   },
 
+
   // 4) Show Modify Report modal
-  formModifyReport(e, id) {
+  formModifyReport: function (e, id) {
     e.preventDefault();
+
+    // Remove any existing Modify Report modal
     $('#modal_formModifyReport').remove();
 
-    const modal = create_modal_content({
+    // Create and wrap the modal
+    const $modal = $(create_modal_content({
       id:      'modal_formModifyReport',
       title:   'Modify Report',
       classes: 'modal-lg'
-    });
-    $('#modal-container').append(modal);
-    load_target(modal.find('.modal-body'));
+    }));
 
-    // 4a) load skeleton
-    $.get('/partials/formModifyReport.html', html => {
-      modal.find('.modal-body').html(html);
+    $('#modal-container').append($modal);
+    load_target($modal.find('.modal-body'));
 
-      // 4b) fetch real data
-      $.getJSON(`${API}/getReport`, { rID: id }, report => {
-        Object.entries(report).forEach(([key, val]) => {
-          const $el = modal.find(`[name=${key}]`);
-          if ($el.length) $el.val(val);
-        });
-        Tags.init('#cboGroups');
+    // Load the blank skeleton first
+    $.get('/partials/formModifyReport.html')
+      .done(html => {
+        $modal.find('.modal-body').html(html);
+
+        // Then fetch the existing report data
+        $.getJSON(`${API}/getReport`, { rID: id })
+          .done(report => {
+            Object.entries(report).forEach(([key, val]) => {
+              const $el = $modal.find(`[name=${key}]`);
+              if ($el.length) $el.val(val);
+            });
+            Tags.init('#cboGroups');
+            load_target_off();
+
+            // Show the modal once populated
+            const modalEl = $modal.get(0);
+            new bootstrap.Modal(modalEl).show();
+          })
+          .fail((_, __, err) => {
+            load_target_off();
+            console.error('Failed to load report data:', err);
+          });
+      })
+      .fail((_, __, err) => {
         load_target_off();
+        console.error('Failed to load ModifyReport form:', err);
       });
-    });
   },
 
+
   // 5) Submit Modify Report
-  saveModifyReport(e) {
+  saveModifyReport: function (e) {
     e.preventDefault();
     form_disable_save();
 
@@ -130,8 +169,9 @@ var modalforms = {
     });
   },
 
+
   // 6) Copy to external remains unchanged
-  btnCopy_click(evt, sender) {
+  btnCopy_click: function (evt, sender) {
     let confirmed = false;
     bootbox.confirm({
       title:           'Copy to External',
@@ -144,7 +184,8 @@ var modalforms = {
     });
   },
 
-  copyToExternal() {
+
+  copyToExternal: function () {
     load();
     $.ajax({ url: '/reports/updateExternalPowerBI' })
       .done(data => {
