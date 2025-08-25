@@ -9,10 +9,6 @@ var modalforms = {
   formAddReport: function (e) {
   e.preventDefault();
   $('#modal_formAddReport').remove();
-  },
-
-    // Remove any existing Add Report modal
-    $('#modal_formAddReport').remove();
 
     // Create a new modal element and wrap it in jQuery
     const $modal = $(create_modal_content({
@@ -41,6 +37,7 @@ var modalforms = {
        load_target_off();
        console.error('Failed to load AddReport form:', err);
      });
+  },
 
   // 2) Submit Add Report
   // 2) Submit Add Report
