@@ -5,10 +5,40 @@ const API = '/.netlify/functions';
 
 var modalforms = {
 
+   // 1) Show Add Report modal
   // 1) Show Add Report modal
-  formAddReport: function (e) {
+formAddReport: function (e) {
   e.preventDefault();
+
+  // Remove any existing Add Report modal
   $('#modal_formAddReport').remove();
+
+  // Build the Bootstrap modal wrapper and wrap it in jQuery
+  const $modal = $(create_modal_content({
+    id:      'modal_formAddReport',
+    title:   'Add Report',
+    classes: 'modal-lg'
+  }));
+
+  // Inject into the placeholder and show a spinner
+  $('#modal-container').append($modal);
+  load_target($modal.find('.modal-body'));
+
+  // Fetch the form partial (sits alongside manageReports.html in /reports)
+  $.get('formAddReport.html')
+    .done(html => {
+      // Inject the form, stop spinner, initialize tags, then show modal
+      $modal.find('.modal-body').html(html);
+      load_target_off();
+      Tags.init('#cboGroups');
+      new bootstrap.Modal($modal.get(0)).show();
+    })
+    .fail((_, __, err) => {
+      load_target_off();
+      console.error('Failed to load AddReport form:', err);
+    });
+}, 
+
 
     // Create a new modal element and wrap it in jQuery
     const $modal = $(create_modal_content({
