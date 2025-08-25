@@ -99,51 +99,143 @@ var modalforms = {
   },
 
   // 4) Show Modify Report modal
-  formModifyReport: function (e, id) {
-    e.preventDefault();
-    $('#modal_formModifyReport').remove();
+  <form id="formModifyReport" enctype="multipart/form-data">
+  <input type="hidden" name="rID">
 
-    const $modal = $(create_modal_content({
-      id:      'modal_formModifyReport',
-      title:   'Modify Report',
-      classes: 'modal-lg'
-    }));
-    $('#modal-container').append($modal);
+  <!-- Type -->
+  <div class="form-group row">
+    <label for="cboType" class="col-sm-2 col-form-label">Type</label>
+    <div class="col-sm">
+      <select name="rType" id="cboType" class="form-select">
+        <option value="report">Report</option>
+        <option value="dashboard">Dashboard</option>
+      </select>
+    </div>
+  </div>
 
-    load_target($modal.find('.modal-body'));
+  <!-- Description -->
+  <div class="form-group row">
+    <label for="txtDesc" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm">
+      <input
+        type="text"
+        name="rDesc"
+        id="txtDesc"
+        class="form-control"
+        required
+      >
+    </div>
+  </div>
 
-    $.get('formModifyReport.html')
-      .done(html => {
-        $modal.find('.modal-body').html(html);
+  <!-- Comments -->
+  <div class="form-group row">
+    <label for="txtComments" class="col-sm-2 col-form-label">Comments</label>
+    <div class="col-sm">
+      <input
+        type="text"
+        name="rComments"
+        id="txtComments"
+        class="form-control"
+        maxlength="500"
+      >
+    </div>
+  </div>
 
-        $.getJSON(`${API}/getReport`, { rID: id })
-          .done(report => {
-            Object.entries(report).forEach(([key, val]) => {
-              const $el = $modal.find(`[name="${key}"]`);
-              if (!$el.length) return;
+  <!-- App Group ID -->
+  <div class="form-group row">
+    <label for="txtAppGroupID" class="col-sm-2 col-form-label">App Group ID</label>
+    <div class="col-sm">
+      <input
+        type="text"
+        name="rAppGroupID"
+        id="txtAppGroupID"
+        class="form-control"
+        required
+      >
+    </div>
+  </div>
 
-              if ($el.prop('multiple')) {
-                $el.val(val).trigger('change');
-              } else {
-                $el.val(val);
-              }
-            });
+  <!-- Report ID -->
+  <div class="form-group row">
+    <label for="txtReportID" class="col-sm-2 col-form-label">Report ID</label>
+    <div class="col-sm">
+      <input
+        type="text"
+        name="rReportID"
+        id="txtReportID"
+        class="form-control"
+      >
+    </div>
+  </div>
 
-            Tags.init('#cboGroups');
-            load_target_off();
-            new bootstrap.Modal($modal.get(0)).show();
-          })
-          .fail((_, __, err) => {
-            load_target_off();
-            console.error('Failed to load report data:', err);
-          });
+  <!-- Icon File & Preview -->
+  <div class="form-group row">
+    <label for="fileIcon" class="col-sm-2 col-form-label">Icon Image</label>
+    <div class="col-sm">
+      <input
+        type="file"
+        name="rIconFile"
+        id="fileIcon"
+        class="form-control"
+        accept="image/*"
+        onchange="previewIcon(event)"
+      >
+      <img
+        id="iconPreview"
+        class="mt-2"
+        style="max-height:5em; display:none;"
+        alt="Icon preview"
+      >
+    </div>
+  </div>
 
-      })
-      .fail((_, __, err) => {
-        load_target_off();
-        console.error('Failed to load ModifyReport form:', err);
-      });
-  },
+  <!-- Class -->
+  <div class="form-group row">
+    <label for="cboClass" class="col-sm-2 col-form-label">Class</label>
+    <div class="col-sm">
+      <select name="rClass" id="cboClass" class="form-select">
+        <option value="primary">Primary</option>
+        <option value="info">Info</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Access Mode, Status, Tags, Category, Display Groups… -->
+  <!-- (replicate the same pattern: blank inputs/selects with matching name) -->
+
+</form>
+
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-primary"
+    onclick="modalforms.saveModifyReport(event)"
+  >
+    <i class="fas fa-save"></i>&nbsp;Save
+  </button>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    onclick="removeModal('#modal_formModifyReport')"
+  >
+    Cancel
+  </button>
+</div>
+
+<script>
+  // Live‐preview your existing or newly‐chosen icon file
+  function previewIcon(evt) {
+    const file = evt.target.files[0];
+    const img  = document.getElementById('iconPreview');
+    if (!file) {
+      img.style.display = 'none';
+      return;
+    }
+    img.src          = URL.createObjectURL(file);
+    img.onload       = () => URL.revokeObjectURL(img.src);
+    img.style.display = 'block';
+  }
+</script>
 
   // 5) Submit Modify Report
   saveModifyReport: function (e) {
