@@ -8,8 +8,8 @@ var modalforms = {
   // 1) Show Add Report modal
   formAddReport: function (e) {
   e.preventDefault();
-
-  },  !
+  $('#modal_formAddReport').remove();
+  },
 
     // Remove any existing Add Report modal
     $('#modal_formAddReport').remove();
