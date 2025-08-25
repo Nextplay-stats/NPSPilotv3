@@ -75,7 +75,7 @@ var modalforms = {
     bootbox.confirm({
       title:           'Confirm Delete',
       message:         'The report will be deleted permanently. Proceed?',
-      swapButtonOrder: true,
+      swapOrder: true,
       callback(confirmed) {
         if (!confirmed) return;
 
