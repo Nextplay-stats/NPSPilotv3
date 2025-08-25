@@ -25,8 +25,8 @@ var modalforms = {
     // Show a loading spinner in the modal body
     load_target($modal.find('.modal-body'));
 
-    // Fetch the empty form partial and inject it
-    $.get('/partials/formAddReport.html')
+    // Fetch the empty form reports and inject it
+    $.get('/reports/formAddReport.html')
       .done(html => {
         $modal.find('.modal-body').html(html);
         load_target_off();
@@ -116,7 +116,7 @@ var modalforms = {
     load_target($modal.find('.modal-body'));
 
     // Load the blank skeleton first
-    $.get('/partials/formModifyReport.html')
+    $.get('/reports/formModifyReport.html')
       .done(html => {
         $modal.find('.modal-body').html(html);
 
