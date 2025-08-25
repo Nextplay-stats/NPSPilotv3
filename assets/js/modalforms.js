@@ -40,25 +40,18 @@ var modalforms = {
   // 2) Submit Add Report
    saveAddReport: function (e) {
    e.preventDefault();
--  form_disable_save();
--
--  const formData = $('#formAddReport').serialize();
--  $.ajax({
--    url:    `${API}/addReport`,
--    method: 'POST',
--    data:   formData,
-+  form_disable_save();
-+
-+  // Gather form + file input
-+  const formEl = document.getElementById('formAddReport');
-+  const data   = new FormData(formEl);
-+
-+  $.ajax({
-+    url:       `${API}/addReport`,
-+    method:    'POST',
-+    data:      data,
-+    processData: false, // tell jQuery not to process the FormData
-+    contentType: false, // tell jQuery not to set Content-Type
+   form_disable_save();
+
+  // Gather form + file input
+   const formEl = document.getElementById('formAddReport');
+   const data   = new FormData(formEl);
+
+   $.ajax({
+     url:       `${API}/addReport`,
+     method:    'POST',
+     data:      data,
+     processData: false, // tell jQuery not to process the FormData
+     contentType: false, // tell jQuery not to set Content-Type
      success: function () {
        removeModal('#modal_formAddReport');
        $('#manageReports').bootstrapTable('refresh');
