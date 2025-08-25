@@ -28,20 +28,18 @@ var modalforms = {
     // Fetch the empty form reports and inject it
     $.get('/reports/formAddReport.html')
       .done(html => {
-        $modal.find('.modal-body').html(html);
-        load_target_off();
-        // Initialize your custom Tags plugin
-        Tags.init('#cboGroups');
+       $modal.find('.modal-body').html(html);
+       load_target_off();
+       Tags.init('#cboGroups');
+   
+       const modalEl = $modal.get(0);
+       new bootstrap.Modal(modalEl).show();
+     })
+     .fail((_, __, err) => {
+       load_target_off();
+       console.error('Failed to load AddReport form:', err);
+     });
 
-        // Finally, show the Bootstrap modal
-        const modalEl = $modal.get(0);
-        new bootstrap.Modal(modalEl).show();
-      })
-      .fail((_, __, err) => {
-        load_target_off();
-        console.error('Failed to load AddReport form:', err);
-      });
-  },
 
 
   // 2) Submit Add Report
