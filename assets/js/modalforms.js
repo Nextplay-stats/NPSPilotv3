@@ -9,97 +9,60 @@ var modalforms = {
   formAddReport: function (e) {
     e.preventDefault();
 
-    // Remove any existing Add Report modal
     $('#modal_formAddReport').remove();
 
-    // Build the Bootstrap modal wrapper
     const $modal = $(create_modal_content({
       id:      'modal_formAddReport',
       title:   'Add Report',
       classes: 'modal-lg'
     }));
-
-    // Inject into placeholder and show spinner
     $('#modal-container').append($modal);
+
     load_target($modal.find('.modal-body'));
 
-    // Fetch the Add Report form (located alongside manageReports.html in /reports)
     $.get('formAddReport.html')
-      .done(function (html) {
+      .done(html => {
         $modal.find('.modal-body').html(html);
         load_target_off();
         Tags.init('#cboGroups');
         new bootstrap.Modal($modal.get(0)).show();
       })
-      .fail(function (_, __, err) {
+      .fail((_, __, err) => {
         load_target_off();
         console.error('Failed to load AddReport form:', err);
       });
   },
 
-  // 2) Submit Add Report
-   // 2) Submit Add Report
-saveAddReport: function (e) {
-  e.preventDefault();
-  form_disable_save();
+  // 2) Submit Add Report via FormData
+  saveAddReport: function (e) {
+    e.preventDefault();
+    form_disable_save();
 
-  // Gather form + file input
-  const formEl = document.getElementById('formAddReport');
-  const data   = new FormData(formEl);
+    // Grab the <form> and its file input
+    const formEl = document.getElementById('formAddReport');
+    const data   = new FormData(formEl);
 
-  $.ajax({
-    url:         `${API}/addReport`,
-    method:      'POST',
-    data:        data,
-    processData: false,  // don’t turn the FormData into a query string
-    contentType: false,  // let the browser set the multipart boundary
-    success: function () {
-      removeModal('#modal_formAddReport');
-      $('#manageReports').bootstrapTable('refresh');
-    },
-    error: function (xhr) {
-      console.error('Add Report failed', xhr);
-      $('.saveReturn')
-        .html(
-          '<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ' +
-          (xhr.responseText || xhr.statusText)
-        )
-        .show();
-    }
-  });    // ← close the $.ajax call
-
-},       // ← close the saveAddReport method (comma if there are more methods)
-// 2) Submit Add Report
-saveAddReport: function (e) {
-  e.preventDefault();
-  form_disable_save();
-
-  // Gather form + file input
-  const formEl = document.getElementById('formAddReport');
-  const data   = new FormData(formEl);
-
-  $.ajax({
-    url:         `${API}/addReport`,
-    method:      'POST',
-    data:        data,
-    processData: false, // don't let jQuery stringify the FormData
-    contentType: false, // let the browser set the multipart boundary
-    success: function () {
-      removeModal('#modal_formAddReport');
-      $('#manageReports').bootstrapTable('refresh');
-    },
-    error: function (xhr) {
-      console.error('Add Report failed', xhr);
-      $('.saveReturn')
-        .html(
-          '<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ' +
-          (xhr.responseText || xhr.statusText)
-        )
-        .show();
-    }
-  });    // ← closes the $.ajax({ … })
-
-},       // ← trailing comma closes the saveAddReport method
+    $.ajax({
+      url:         `${API}/addReport`,
+      method:      'POST',
+      data:        data,
+      processData: false,  // don't transform FormData into query string
+      contentType: false,  // let the browser set the multipart boundary
+      success: function () {
+        removeModal('#modal_formAddReport');
+        $('#manageReports').bootstrapTable('refresh');
+      },
+      error: function (xhr) {
+        console.error('Add Report failed', xhr);
+        $('.saveReturn')
+          .html(
+            '<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ' +
+            (xhr.responseText || xhr.statusText)
+          )
+          .show();
+      }
+    });
+  },
 
   // 3) Delete report
   deleteReport: function (e, id) {
@@ -107,7 +70,7 @@ saveAddReport: function (e) {
 
     bootbox.confirm({
       title: 'Confirm Delete',
-      message: 'The report will be deleted permanently. Proceed?',
+      message: 'This report will be deleted permanently. Proceed?',
       swapButtonOrder: true,
       callback: function (confirmed) {
         if (!confirmed) return;
@@ -122,10 +85,12 @@ saveAddReport: function (e) {
           error: function (xhr) {
             console.error('Delete failed', xhr);
             $('.saveReturn')
-              .html('<div class="alert alert-danger">' +
-                    '<i class="fas fa-times"></i>&nbsp;Delete failed: ' +
-                    (xhr.responseText || xhr.statusText) +
-                    '</div>')
+              .html(
+                '<div class="alert alert-danger">' +
+                '<i class="fas fa-times"></i>&nbsp;Delete failed: ' +
+                (xhr.responseText || xhr.statusText) +
+                '</div>'
+              )
               .show();
           }
         });
@@ -138,37 +103,43 @@ saveAddReport: function (e) {
     e.preventDefault();
     $('#modal_formModifyReport').remove();
 
-    // Build the Bootstrap modal wrapper
     const $modal = $(create_modal_content({
       id:      'modal_formModifyReport',
       title:   'Modify Report',
       classes: 'modal-lg'
     }));
     $('#modal-container').append($modal);
+
     load_target($modal.find('.modal-body'));
 
-    // Fetch the Modify Report form skeleton
     $.get('formModifyReport.html')
-      .done(function (html) {
+      .done(html => {
         $modal.find('.modal-body').html(html);
 
-        // Then load the existing report data
         $.getJSON(`${API}/getReport`, { rID: id })
-          .done(function (report) {
-            Object.entries(report).forEach(function ([key, val]) {
-              const $el = $modal.find(`[name=${key}]`);
-              if ($el.length) $el.val(val);
+          .done(report => {
+            Object.entries(report).forEach(([key, val]) => {
+              const $el = $modal.find(`[name="${key}"]`);
+              if (!$el.length) return;
+
+              if ($el.prop('multiple')) {
+                $el.val(val).trigger('change');
+              } else {
+                $el.val(val);
+              }
             });
+
             Tags.init('#cboGroups');
             load_target_off();
             new bootstrap.Modal($modal.get(0)).show();
           })
-          .fail(function (_, __, err) {
+          .fail((_, __, err) => {
             load_target_off();
             console.error('Failed to load report data:', err);
           });
+
       })
-      .fail(function (_, __, err) {
+      .fail((_, __, err) => {
         load_target_off();
         console.error('Failed to load ModifyReport form:', err);
       });
@@ -179,11 +150,15 @@ saveAddReport: function (e) {
     e.preventDefault();
     form_disable_save();
 
-    const formData = $('#formModifyReport').serialize();
+    const formEl = document.getElementById('formModifyReport');
+    const data   = new FormData(formEl);
+
     $.ajax({
-      url:    `${API}/modifyReport`,
-      method: 'POST',
-      data:   formData,
+      url:         `${API}/modifyReport`,
+      method:      'POST',
+      data:        data,
+      processData: false,
+      contentType: false,
       success: function () {
         removeModal('#modal_formModifyReport');
         $('#manageReports').bootstrapTable('refresh');
@@ -191,14 +166,16 @@ saveAddReport: function (e) {
       error: function (xhr) {
         console.error('Modify failed', xhr);
         $('.saveReturn')
-          .html('<i class="fas fa-times text-danger"></i>&nbsp;Update failed: ' +
-                (xhr.responseText || xhr.statusText))
+          .html(
+            '<i class="fas fa-times text-danger"></i>&nbsp;Update failed: ' +
+            (xhr.responseText || xhr.statusText)
+          )
           .show();
       }
     });
   },
 
-  // 6) Copy to external remains unchanged
+  // 6) Copy to external
   btnCopy_click: function (evt, sender) {
     evt.preventDefault();
     let confirmed = false;
@@ -207,9 +184,7 @@ saveAddReport: function (e) {
       title: 'Copy to External',
       message: 'Confirm copy of live reports to External site.',
       swapButtonOrder: true,
-      callback: function (result) {
-        confirmed = result;
-      },
+      callback: function (res) { confirmed = res; },
       onHidden: function () {
         if (confirmed) modalforms.copyToExternal();
       }
@@ -219,16 +194,16 @@ saveAddReport: function (e) {
   copyToExternal: function () {
     load();
     $.ajax({ url: '/reports/updateExternalPowerBI' })
-      .done(function (data) {
+      .done(data => {
         const title = data === 'OK' ? 'Data Copied' : 'Error Copying Data';
         const msg   = data === 'OK' ? 'Data copied successfully.' : data;
         bootbox.alert({ title, message: msg });
         load_off();
       })
-      .fail(function (_, __, err) {
+      .fail((_, __, err) => {
         bootbox.alert({ title: 'Error', message: err });
         load_off();
       });
   }
 
-}; 
+};  // end of modalforms
