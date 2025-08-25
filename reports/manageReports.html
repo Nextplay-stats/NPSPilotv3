@@ -157,17 +157,43 @@
           </nav>
 
           <div class="card mb-4">
-            <div class="card-body">
-              <button class="btn btn-primary"
-                      onclick="modalforms.formAddReport(event);">
-                <i class="fas fa-plus-circle"></i>&nbsp;Add Report
-              </button>
-              <button class="btn btn-primary ms-2"
-                      onclick="modalforms.btnCopy_click(event, this);">
-                <i class="fas fa-file-export"></i>&nbsp;Copy to External
-              </button>
-            </div>
-          </div>
+  <div class="card-body">
+    <button
+      id="btnAddReport"
+      type="button"
+      class="btn btn-primary"
+    >
+      <i class="fas fa-plus-circle"></i>&nbsp;Add Report
+    </button>
+
+    <button
+      id="btnCopyExternal"
+      type="button"
+      class="btn btn-primary ms-2"
+    >
+      <i class="fas fa-file-export"></i>&nbsp;Copy to External
+    </button>
+  </div>
+</div>
+
+<!-- keep this placeholder somewhere on the page -->
+<div id="modal-container"></div>
+
+<script>
+// after you load modalforms.js...
+
+// wire up Add Report
+document
+  .getElementById('btnAddReport')
+  .addEventListener('click', modalforms.formAddReport);
+
+// wire up Copy to External
+document
+  .getElementById('btnCopyExternal')
+  .addEventListener('click', function(evt) {
+    modalforms.btnCopy_click(evt, this);
+  });
+</script>
 
           <div class="table-responsive">
             <table id="manageReports"
