@@ -42,8 +42,6 @@ var modalforms = {
        console.error('Failed to load AddReport form:', err);
      });
 
-
-
   // 2) Submit Add Report
   saveAddReport: function (e) {
     e.preventDefault();
