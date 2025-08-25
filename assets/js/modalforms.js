@@ -69,15 +69,37 @@ saveAddReport: function (e) {
   });    // ← close the $.ajax call
 
 },       // ← close the saveAddReport method (comma if there are more methods)
-     error: function (xhr) {
-       console.error('Add Report failed', xhr);
-       $('.saveReturn')
-         .html('<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ' +
-               (xhr.responseText || xhr.statusText))
-         .show();
-     }
-   });
- },
+// 2) Submit Add Report
+saveAddReport: function (e) {
+  e.preventDefault();
+  form_disable_save();
+
+  // Gather form + file input
+  const formEl = document.getElementById('formAddReport');
+  const data   = new FormData(formEl);
+
+  $.ajax({
+    url:         `${API}/addReport`,
+    method:      'POST',
+    data:        data,
+    processData: false, // don't let jQuery stringify the FormData
+    contentType: false, // let the browser set the multipart boundary
+    success: function () {
+      removeModal('#modal_formAddReport');
+      $('#manageReports').bootstrapTable('refresh');
+    },
+    error: function (xhr) {
+      console.error('Add Report failed', xhr);
+      $('.saveReturn')
+        .html(
+          '<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ' +
+          (xhr.responseText || xhr.statusText)
+        )
+        .show();
+    }
+  });    // ← closes the $.ajax({ … })
+
+},       // ← trailing comma closes the saveAddReport method
 
   // 3) Delete report
   deleteReport: function (e, id) {
