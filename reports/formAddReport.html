@@ -39,12 +39,39 @@
     </div>
   </div>
 
-  <div class="form-group row">
-    <label for="txtIcon" class="col-sm-2 col-form-label">Icon</label>
-    <div class="col-sm">
-      <input name="rIcon" id="txtIcon" class="form-control" value="">
-    </div>
+  <!-- … above rows … -->
+
+<div class="form-group row">
+  <label for="fileIcon" class="col-sm-2 col-form-label">Icon Image</label>
+  <div class="col-sm">
+    <input 
+      type="file" 
+      name="rIconFile" 
+      id="fileIcon" 
+      class="form-control" 
+      accept="image/*"
+      onchange="previewIcon(event)"
+      required
+    >
+    <small class="form-text text-muted">
+      Upload a PNG/JPEG that will display as your report button.
+    </small>
+    <img id="iconPreview" style="max-height:5em; margin-top:.5em; display:none" />
   </div>
+</div>
+
+<!-- … footer buttons … -->
+
+<script>
+  // Show a live preview of the selected image
+  function previewIcon(evt) {
+    const [file] = evt.target.files;
+    const img = document.getElementById('iconPreview');
+    if (!file) return img.style.display = 'none';
+    img.src = URL.createObjectURL(file);
+    img.style.display = 'block';
+  }
+</script>
 
   <div class="form-group row">
     <label for="cboClass" class="col-sm-2 col-form-label">Class</label>
