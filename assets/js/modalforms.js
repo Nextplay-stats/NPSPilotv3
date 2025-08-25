@@ -38,24 +38,37 @@ var modalforms = {
   },
 
   // 2) Submit Add Report
-   saveAddReport: function (e) {
-   e.preventDefault();
-   form_disable_save();
+   // 2) Submit Add Report
+saveAddReport: function (e) {
+  e.preventDefault();
+  form_disable_save();
 
   // Gather form + file input
-   const formEl = document.getElementById('formAddReport');
-   const data   = new FormData(formEl);
+  const formEl = document.getElementById('formAddReport');
+  const data   = new FormData(formEl);
 
-   $.ajax({
-     url:       `${API}/addReport`,
-     method:    'POST',
-     data:      data,
-     processData: false, // tell jQuery not to process the FormData
-     contentType: false, // tell jQuery not to set Content-Type
-     success: function () {
-       removeModal('#modal_formAddReport');
-       $('#manageReports').bootstrapTable('refresh');
-     },
+  $.ajax({
+    url:         `${API}/addReport`,
+    method:      'POST',
+    data:        data,
+    processData: false,  // don’t turn the FormData into a query string
+    contentType: false,  // let the browser set the multipart boundary
+    success: function () {
+      removeModal('#modal_formAddReport');
+      $('#manageReports').bootstrapTable('refresh');
+    },
+    error: function (xhr) {
+      console.error('Add Report failed', xhr);
+      $('.saveReturn')
+        .html(
+          '<i class="fas fa-times text-danger"></i>&nbsp;Add failed: ' +
+          (xhr.responseText || xhr.statusText)
+        )
+        .show();
+    }
+  });    // ← close the $.ajax call
+
+},       // ← close the saveAddReport method (comma if there are more methods)
      error: function (xhr) {
        console.error('Add Report failed', xhr);
        $('.saveReturn')
