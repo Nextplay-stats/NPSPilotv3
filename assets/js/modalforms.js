@@ -43,6 +43,7 @@ var modalforms = {
      });
 
   // 2) Submit Add Report
+  // 2) Submit Add Report
   saveAddReport: function (e) {
     e.preventDefault();
     form_disable_save();
@@ -64,6 +65,7 @@ var modalforms = {
       }
     });
   },
+
 
 
   // 3) Delete report
