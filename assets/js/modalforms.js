@@ -9,37 +9,38 @@ const API = '/.netlify/functions';
 var modalforms = {
 
   // 1) Show Add Report modal
-  formAddReport: function (e) {
-    e.preventDefault();
+ // 1) Show Add Report modal
+formAddReport: function (e) {
+  e.preventDefault();
 
-    // Remove any existing Add Report modal
-    $('#modal_formAddReport').remove();
+  // Remove any existing Add Report modal
+  $('#modal_formAddReport').remove();
 
-    // Build and inject the Bootstrap modal wrapper
-    const $modal = $(create_modal_content({
-      id:      'modal_formAddReport',
-      title:   'Add Report',
-      classes: 'modal-lg'
-    }));
-    $('#modal-container').append($modal);
+  // Build the Bootstrap modal wrapper
+  const $modal = $(create_modal_content({
+    id:      'modal_formAddReport',
+    title:   'Add Report',
+    classes: 'modal-lg'
+  }));
 
-    // Show spinner
-    load_target($modal.find('.modal-body'));
+  // Inject into placeholder and show spinner
+  $('#modal-container').append($modal);
+  load_target($modal.find('.modal-body'));
 
-    // Fetch the form partial (next to manageReports.html under /reports)
-    $.get('formAddReport.html')
-      .done(function (html) {
-        $modal.find('.modal-body').html(html);
-        load_target_off();
-        Tags.init('#cboGroups');
-        // Finally show it
-        new bootstrap.Modal($modal.get(0)).show();
-      })
-      .fail(function (_, __, err) {
-        load_target_off();
-        console.error('Failed to load AddReport form:', err);
-      });
-  },  // ← make sure this comma is here
+  // Fetch the form HTML (lives next to manageReports.html in /reports)
+  $.get('formAddReport.html')
+    .done(html => {
+      $modal.find('.modal-body').html(html);
+      load_target_off();
+      Tags.init('#cboGroups');
+      new bootstrap.Modal($modal.get(0)).show();
+    })
+    .fail((_, __, err) => {
+      load_target_off();
+      console.error('Failed to load AddReport form:', err);
+    });
+
+},  // ← **This** comma is the last thing in this method
 
   // 2) Submit Add Report
   saveAddReport: function (e) {
