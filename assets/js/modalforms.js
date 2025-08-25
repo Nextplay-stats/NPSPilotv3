@@ -26,7 +26,7 @@ var modalforms = {
     load_target($modal.find('.modal-body'));
 
     // Fetch the empty form reports and inject it
-    $.get('/reports/formAddReport.html')
+    $.get('/formAddReport.html')
       .done(html => {
        $modal.find('.modal-body').html(html);
        load_target_off();
