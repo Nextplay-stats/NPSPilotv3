@@ -1,0 +1,4 @@
+$(document).ready(function(){
+	var rID = $('#fID').val();
+	var test = _powerbi.getReport(rID);
+});
